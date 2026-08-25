@@ -51,15 +51,15 @@
 
                         <li class="nav-item">
                             <a class="nav-link"
-                               asp-controller="About"
-                               asp-action="Index">
+                               asp-controller="Home"
+                               asp-action="About">
                                 About
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link"
-                               asp-controller="Donate"
+                               asp-controller="Donation"
                                asp-action="Index">
                                 Donate
                             </a>
@@ -75,15 +75,15 @@
 
                         <li class="nav-item">
                             <a class="nav-link"
-                               asp-controller="Contact"
-                               asp-action="Index">
+                               asp-controller="Home"
+                               asp-action="Contact">
                                 Contact
                             </a>
                         </li>
 
                         <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
                             <a class="btn btn-donate"
-                               asp-controller="Donate"
+                               asp-controller="Donation"
                                asp-action="Index">
                                 Donate Now
                             </a>
@@ -129,13 +129,13 @@
                         </li>
 
                         <li>
-                            <a asp-controller="About" asp-action="Index">
+                            <a asp-controller="Home" asp-action="About">
                                 About
                             </a>
                         </li>
 
                         <li>
-                            <a asp-controller="Donate" asp-action="Index">
+                            <a asp-controller="Donation" asp-action="Index">
                                 Donate
                             </a>
                         </li>
@@ -153,20 +153,32 @@
 
                     <ul class="footer-links">
                         <li>
-                            <a asp-controller="Contact" asp-action="Index">
+                            <a asp-controller="Home" asp-action="Contact">
                                 Contact
                             </a>
                         </li>
 
                         <li>
-                            <a href="#">
-                                Emergency Relief
+                            <a asp-controller="Account" asp-action="Login">
+                                Login
                             </a>
                         </li>
 
                         <li>
-                            <a href="#">
-                                Our Impact
+                            <a asp-controller="Account" asp-action="Register">
+                                Register
+                            </a>
+                        </li>
+
+                        <li>
+                            <a asp-controller="Account" asp-action="Profile">
+                                Profile
+                            </a>
+                        </li>
+
+                        <li>
+                            <a asp-controller="Employee" asp-action="Dashboard">
+                                Employee Dashboard
                             </a>
                         </li>
                     </ul>
@@ -182,7 +194,7 @@
                     </p>
 
                     <a class="btn btn-footer-donate"
-                       asp-controller="Donate"
+                       asp-controller="Donation"
                        asp-action="Index">
                         Donate Now
                     </a>
