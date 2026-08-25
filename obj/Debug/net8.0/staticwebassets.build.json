@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6WwWtYampX6FTSDvEVFD1qjPdpOPK+5l/uSV4I3nPBg=",
+  "Hash": "TiHNP8rHwDG5tOs6vgvmrjnEn2jnpUzAJrUAlP8J0U4=",
   "Source": "GiftOfTheGivers_web",
   "BasePath": "_content/GiftOfTheGivers_web",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/obj/Debug/net8.0/scopedcss/projectbundle/GiftOfTheGivers_web.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/wwwroot/css/dashboard.css",
+      "SourceId": "GiftOfTheGivers_web",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/wwwroot/",
+      "BasePath": "_content/GiftOfTheGivers_web",
+      "RelativePath": "css/dashboard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/dashboard.css"
     },
     {
       "Identity": "/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/wwwroot/css/site.css",

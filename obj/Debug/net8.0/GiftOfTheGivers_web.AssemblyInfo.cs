@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GiftOfTheGivers_web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea0d3f3e646e21258fc062a255d6756c6980abf9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+111aad95df12aa4e64fe779d18a985cf0a82124c")]
 [assembly: System.Reflection.AssemblyProductAttribute("GiftOfTheGivers_web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GiftOfTheGivers_web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
