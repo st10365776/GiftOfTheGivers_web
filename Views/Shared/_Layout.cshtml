@@ -1,49 +1,212 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - GiftOfTheGivers_web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/GiftOfTheGivers_web.styles.css" asp-append-version="true"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Gift of the Givers</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/GiftOfTheGivers_web.styles.css" asp-append-version="true" />
 </head>
+
 <body>
-<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">GiftOfTheGivers_web</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                </ul>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg gift-navbar">
+            <div class="container">
+
+                <a class="navbar-brand gift-brand"
+                   asp-controller="Home"
+                   asp-action="Index">
+
+                    <img src="~/images/logo1.png"
+                         alt="Gift of the Givers"
+                         style="height: 120px; width: auto; max-height: 120px;" />
+
+                </a>
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-controller="Home"
+                               asp-action="Index">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-controller="About"
+                               asp-action="Index">
+                                About
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-controller="Donate"
+                               asp-action="Index">
+                                Donate
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-controller="Volunteer"
+                               asp-action="Index">
+                                Volunteer
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-controller="Contact"
+                               asp-action="Index">
+                                Contact
+                            </a>
+                        </li>
+
+                        <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                            <a class="btn btn-donate"
+                               asp-controller="Donate"
+                               asp-action="Index">
+                                Donate Now
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
             </div>
-        </div>
-    </nav>
-</header>
-<div class="container">
-    <main role="main" class="pb-3">
+        </nav>
+    </header>
+
+    <!-- Page content -->
+    <main role="main">
         @RenderBody()
     </main>
-</div>
 
-<footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2026 - GiftOfTheGivers_web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </div>
-</footer>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
-@await RenderSectionAsync("Scripts", required: false)
+    <!-- Footer -->
+    <footer class="gift-footer">
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        GIFT OF THE GIVERS
+                    </div>
+
+                    <p class="footer-description">
+                        Responding to disasters, providing humanitarian
+                        assistance and helping communities in need.
+                    </p>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h5>Explore</h5>
+
+                    <ul class="footer-links">
+                        <li>
+                            <a asp-controller="Home" asp-action="Index">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a asp-controller="About" asp-action="Index">
+                                About
+                            </a>
+                        </li>
+
+                        <li>
+                            <a asp-controller="Donate" asp-action="Index">
+                                Donate
+                            </a>
+                        </li>
+
+                        <li>
+                            <a asp-controller="Volunteer" asp-action="Index">
+                                Volunteer
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h5>Support</h5>
+
+                    <ul class="footer-links">
+                        <li>
+                            <a asp-controller="Contact" asp-action="Index">
+                                Contact
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Emergency Relief
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Our Impact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h5>Make a Difference</h5>
+
+                    <p class="footer-description">
+                        Your contribution can help provide food, water,
+                        medical assistance and relief to communities
+                        affected by disasters.
+                    </p>
+
+                    <a class="btn btn-footer-donate"
+                       asp-controller="Donate"
+                       asp-action="Index">
+                        Donate Now
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <span>
+                    © 2026 Gift of the Givers. All rights reserved.
+                </span>
+
+                <span>
+                    Humanitarian Relief &amp; Disaster Response
+                </span>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
