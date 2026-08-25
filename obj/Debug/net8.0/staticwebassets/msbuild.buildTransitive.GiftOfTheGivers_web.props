@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/GiftOfTheGivers_web.props" />
+</Project>
