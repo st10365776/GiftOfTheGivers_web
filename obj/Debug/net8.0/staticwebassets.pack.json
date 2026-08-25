@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/wwwroot/images/hero.jpeg",
+      "PackagePath": "staticwebassets/images/hero.jpeg"
+    },
+    {
+      "Id": "/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/wwwroot/images/logo1.png",
+      "PackagePath": "staticwebassets/images/logo1.png"
+    },
+    {
       "Id": "/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

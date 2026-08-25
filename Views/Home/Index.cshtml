@@ -1,8 +1,352 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h2 class="display-4">Welcome</h2>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+
+            <span class="hero-label">
+                Humanitarian Relief
+            </span>
+
+            <h1>
+                Helping Communities.<br />
+                Saving Lives.
+            </h1>
+
+            <p>
+                Gift of the Givers provides humanitarian assistance
+                to communities affected by disasters, poverty and
+                humanitarian crises.
+            </p>
+
+            <div class="hero-buttons">
+                <a asp-controller="Donate"
+                   asp-action="Index"
+                   class="btn btn-primary-gift">
+                    Donate Now
+                </a>
+
+                <a asp-controller="Volunteer"
+                   asp-action="Index"
+                   class="btn btn-outline-light-gift">
+                    Become a Volunteer
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- What we do -->
+<section class="section">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <span class="hero-label">
+                What We Do
+            </span>
+
+            <h2 class="section-title">
+                Making a Difference Where It Matters
+            </h2>
+
+            <p class="section-subtitle">
+                We respond to communities in need by providing
+                essential humanitarian support when it matters most.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="impact-card">
+
+                    <div class="impact-icon">
+                        +
+                    </div>
+
+                    <h3>
+                        Emergency Relief
+                    </h3>
+
+                    <p>
+                        Responding to disasters and emergencies by
+                        delivering essential supplies and assistance
+                        to affected communities.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="impact-card">
+
+                    <div class="impact-icon">
+                        ♥
+                    </div>
+
+                    <h3>
+                        Food &amp; Water
+                    </h3>
+
+                    <p>
+                        Providing food, clean water and essential
+                        resources to families and communities facing
+                        difficult circumstances.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="impact-card">
+
+                    <div class="impact-icon">
+                        +
+                    </div>
+
+                    <h3>
+                        Medical Assistance
+                    </h3>
+
+                    <p>
+                        Supporting communities with medical supplies,
+                        healthcare assistance and emergency response.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Statistics -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-6 col-lg-3">
+                <div class="stat">
+                    <div class="stat-number">
+                        30+
+                    </div>
+
+                    <div class="stat-label">
+                        Years of Service
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="stat">
+                    <div class="stat-number">
+                        50+
+                    </div>
+
+                    <div class="stat-label">
+                        Countries Reached
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="stat">
+                    <div class="stat-number">
+                        100+
+                    </div>
+
+                    <div class="stat-label">
+                        Relief Operations
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="stat">
+                    <div class="stat-number">
+                        Millions
+                    </div>
+
+                    <div class="stat-label">
+                        Lives Impacted
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- About -->
+<section class="section section-light">
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <span class="hero-label">
+                    About Us
+                </span>
+
+                <h2 class="content-heading">
+                    Driven by compassion.
+                    Powered by people.
+                </h2>
+
+                <p class="content-text">
+                    Gift of the Givers is a humanitarian organisation
+                    dedicated to helping people affected by disasters,
+                    conflict, poverty and other humanitarian crises.
+                </p>
+
+                <p class="content-text">
+                    Through donations, volunteers and humanitarian
+                    operations, communities can receive the support
+                    they need when they need it most.
+                </p>
+
+                <a asp-controller="About"
+                   asp-action="Index"
+                   class="btn btn-primary-gift">
+                    Learn More About Us
+                </a>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="impact-card">
+
+                    <h3>
+                        Our Mission
+                    </h3>
+
+                    <p>
+                        To provide effective humanitarian assistance
+                        to people and communities affected by
+                        disasters and difficult circumstances.
+                    </p>
+
+                    <hr />
+
+                    <h3>
+                        Our Values
+                    </h3>
+
+                    <p>
+                        Compassion, dignity, service and a commitment
+                        to making a meaningful difference in the lives
+                        of others.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Get involved -->
+<section class="section">
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="hero-label">
+                Get Involved
+            </span>
+
+            <h2 class="section-title">
+                You Can Make a Difference
+            </h2>
+
+            <p class="section-subtitle">
+                Whether you donate or volunteer your time,
+                your contribution can help communities in need.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+                <div class="impact-card">
+
+                    <h3>
+                        Support Our Work
+                    </h3>
+
+                    <p>
+                        Your donation can help provide food, water,
+                        medical supplies and emergency assistance
+                        to communities affected by disasters.
+                    </p>
+
+                    <a asp-controller="Donate"
+                       asp-action="Index"
+                       class="btn btn-primary-gift">
+                        Make a Donation
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="impact-card">
+
+                    <h3>
+                        Become a Volunteer
+                    </h3>
+
+                    <p>
+                        Give your time and skills to support
+                        humanitarian efforts and make a positive
+                        difference in your community.
+                    </p>
+
+                    <a asp-controller="Volunteer"
+                       asp-action="Index"
+                       class="btn btn-primary-gift">
+                        Volunteer With Us
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Final call to action -->
+<section class="cta-section">
+    <div class="container">
+
+        <h2>
+            Together, We Can Make a Difference
+        </h2>
+
+        <p>
+            Every contribution matters. Help us provide
+            humanitarian support to people and communities
+            who need it most.
+        </p>
+
+        <a asp-controller="Donate"
+           asp-action="Index"
+           class="btn btn-primary-gift">
+            Donate Now
+        </a>
+
+    </div>
+</section>

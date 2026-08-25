@@ -28,3 +28,4 @@
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/obj/Debug/net8.0/GiftOfTheGivers_web.pdb
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/obj/Debug/net8.0/GiftOfTheGivers_web.genruntimeconfig.cache
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/obj/Debug/net8.0/ref/GiftOfTheGivers_web.dll
+/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/obj/Debug/net8.0/GiftOfTheGivers_web.sourcelink.json
