@@ -1,7 +1,6 @@
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/bin/Debug/net8.0/appsettings.Development.json
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/bin/Debug/net8.0/appsettings.json
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/bin/Debug/net8.0/GiftOfTheGivers_web.staticwebassets.runtime.json
-/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/bin/Debug/net8.0/GiftOfTheGivers_web
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/bin/Debug/net8.0/GiftOfTheGivers_web.deps.json
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/bin/Debug/net8.0/GiftOfTheGivers_web.runtimeconfig.json
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/bin/Debug/net8.0/GiftOfTheGivers_web.dll
@@ -29,3 +28,4 @@
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/obj/Debug/net8.0/GiftOfTheGivers_web.genruntimeconfig.cache
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/obj/Debug/net8.0/ref/GiftOfTheGivers_web.dll
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/obj/Debug/net8.0/GiftOfTheGivers_web.sourcelink.json
+/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/bin/Debug/net8.0/GiftOfTheGivers_web
