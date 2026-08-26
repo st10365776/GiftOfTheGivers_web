@@ -1,10 +1,60 @@
+@model GiftOfTheGivers_web.Models.DonationViewModel
+
 @{
     ViewData["Title"] = "Donation Details";
 }
 
-<div class="container py-5">
-    <h1>Donation Details</h1>
-    <a asp-controller="Donation" asp-action="OnceOff">Make a once-off donation</a>
-    <a asp-controller="Donation" asp-action="Monthly">Make a monthly donation</a>
-    <a asp-controller="Donation" asp-action="Confirm">Confirm donation</a>
-</div>
+<section class="donation-page">
+    <div class="container">
+
+        <div class="donation-header">
+            <span class="hero-label">Thank You</span>
+
+            <h1>Donation Details</h1>
+
+            <p>
+                Please review your donation before continuing.
+            </p>
+        </div>
+
+        <div class="donation-card">
+
+            <div class="donation-summary">
+
+                <div class="summary-row">
+                    <span>Donation Type</span>
+                    <strong>@Model.DonationType</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Amount</span>
+                    <strong>R @Model.Amount.ToString("N2")</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Payment Method</span>
+                    <strong>@Model.PaymentMethod</strong>
+                </div>
+
+            </div>
+
+            <div class="donation-action">
+
+                <a asp-controller="Donation"
+                   asp-action="Index"
+                   class="btn btn-outline-secondary">
+                    Go Back
+                </a>
+
+                <a asp-controller="Donation"
+                   asp-action="ThankYou"
+                   class="btn btn-donate-continue">
+                    Complete Donation
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>

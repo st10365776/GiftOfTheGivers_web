@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Thank You";
+}
+
+<section class="thank-you-page">
+    <div class="container">
+
+        <div class="thank-you-card">
+
+            <div class="thank-you-icon">
+                ✓
+            </div>
+
+            <span class="hero-label">Donation Received</span>
+
+            <h1>Thank You!</h1>
+
+            <p class="thank-you-message">
+                Thank you for supporting Gift of the Givers.
+                Your contribution will help provide humanitarian
+                assistance to communities in need.
+            </p>
+
+            <p class="thank-you-small">
+                Every contribution makes a difference.
+            </p>
+
+            <div class="thank-you-buttons">
+
+                <a asp-controller="Home"
+                   asp-action="Index"
+                   class="btn btn-donate-continue">
+                    Back to Home
+                </a>
+
+                <a asp-controller="Donation"
+                   asp-action="Index"
+                   class="btn btn-thank-you-outline">
+                    Make Another Donation
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>

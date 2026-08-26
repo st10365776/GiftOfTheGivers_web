@@ -1,12 +1,154 @@
+@model GiftOfTheGivers_web.Models.DonationViewModel
+
 @{
-    ViewData["Title"] = "Donations";
+ViewData["Title"] = "Make a Donation";
 }
 
-<div class="container py-5">
-    <h1>Donations</h1>
-    <a asp-controller="Donation" asp-action="OnceOff">Once-off donation</a>
-    <a asp-controller="Donation" asp-action="Monthly">Monthly donation</a>
-    <a asp-controller="Donation" asp-action="Details">Donation details</a>
-    <a asp-controller="Home" asp-action="About">About us</a>
-    <a asp-controller="Home" asp-action="Contact">Contact us</a>
-</div>
+<section class="donation-page">
+    <div class="container">
+
+        <div class="donation-header">
+            <span class="hero-label">Support Our Work</span>
+
+            <h1>Make a Donation</h1>
+
+            <p>
+                Your donation helps provide essential humanitarian
+                assistance to communities in need.
+            </p>
+        </div>
+
+        <div class="donation-card">
+
+            <form asp-controller="Donation" asp-action="Index" method="post">
+
+                <h2>How would you like to donate?</h2>
+
+                <div class="donation-type">
+
+                    <button type="button"
+                            class="donation-type-btn active"
+                            data-type="Once-off">
+                        Once-off
+                    </button>
+
+                    <button type="button"
+                            class="donation-type-btn"
+                            data-type="Monthly">
+                        Monthly
+                    </button>
+
+                </div>
+
+                <input type="hidden"
+                       id="donationType"
+                       name="DonationType"
+                       value="Once-off" />
+
+                <h3>Select amount</h3>
+
+                <div class="donation-amounts">
+
+                    <button type="button"
+                            class="amount-btn"
+                            data-amount="100">
+                        R100
+                    </button>
+
+                    <button type="button"
+                            class="amount-btn"
+                            data-amount="250">
+                        R250
+                    </button>
+
+                    <button type="button"
+                            class="amount-btn"
+                            data-amount="500">
+                        R500
+                    </button>
+
+                    <button type="button"
+                            class="amount-btn"
+                            data-amount="1000">
+                        R1 000
+                    </button>
+
+                    <button type="button"
+                            class="amount-btn"
+                            data-amount="2500">
+                        R2 500
+                    </button>
+
+                    <button type="button"
+                            class="amount-btn"
+                            id="customButton">
+                        Custom
+                    </button>
+
+                </div>
+
+                <input type="hidden"
+                       id="donationAmount"
+                       name="Amount"
+                       value="" />
+
+                <div class="custom-amount" id="customAmountContainer">
+
+                    <label for="customAmount">
+                        Custom amount
+                    </label>
+
+                    <input type="number"
+                           id="customAmount"
+                           class="form-control"
+                           min="1"
+                           placeholder="Enter amount" />
+
+                </div>
+
+                <span asp-validation-for="Amount"
+                      class="text-danger">
+                </span>
+
+                <h3>Payment Method</h3>
+
+                <div class="payment-methods">
+
+                    <label class="payment-option">
+
+                        <input type="radio"
+                               name="PaymentMethod"
+                               value="Card"
+                               checked />
+
+                        <span>Credit / Debit Card</span>
+
+                    </label>
+
+                    <label class="payment-option">
+
+                        <input type="radio"
+                               name="PaymentMethod"
+                               value="EFT" />
+
+                        <span>EFT</span>
+
+                    </label>
+
+                </div>
+
+                <div class="donation-action">
+
+                    <button type="submit"
+                            class="btn btn-donate-continue">
+                        Continue
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
