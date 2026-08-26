@@ -1,123 +1,128 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EntryPointFilePath = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GiftOfTheGivers_web
 build_property.RootNamespace = GiftOfTheGivers_web
-build_property.ProjectDir = /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/
+build_property.ProjectDir = c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web
+build_property.MSBuildProjectDirectory = c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Account/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Account/Profile.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Qcm9maWxlLmNzaHRtbA==
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Account/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Account/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Donation/Confirm.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9uYXRpb24vQ29uZmlybS5jc2h0bWw=
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Donation/Confirm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cQ29uZmlybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Donation/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9uYXRpb24vRGV0YWlscy5jc2h0bWw=
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Donation/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Donation/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9uYXRpb24vSW5kZXguY3NodG1s
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Donation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Donation/Monthly.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9uYXRpb24vTW9udGhseS5jc2h0bWw=
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Donation/Monthly.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cTW9udGhseS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Donation/OnceOff.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9uYXRpb24vT25jZU9mZi5jc2h0bWw=
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Donation/OnceOff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cT25jZU9mZi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Employee/Dashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvRGFzaGJvYXJkLmNzaHRtbA==
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Employee/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Employee/DonationDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvRG9uYXRpb25EZXRhaWxzLmNzaHRtbA==
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Employee/DonationDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRG9uYXRpb25EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Employee/Donations.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvRG9uYXRpb25zLmNzaHRtbA==
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Employee/Donations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRG9uYXRpb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Employee/VolunteerDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvVm9sdW50ZWVyRGV0YWlscy5jc2h0bWw=
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Employee/VolunteerDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcVm9sdW50ZWVyRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Employee/Volunteers.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvVm9sdW50ZWVycy5jc2h0bWw=
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Employee/Volunteers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcVm9sdW50ZWVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Home/About.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BYm91dC5jc2h0bWw=
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Home/Contact.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Db250YWN0LmNzaHRtbA==
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Volunteer/Apply.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm9sdW50ZWVyL0FwcGx5LmNzaHRtbA==
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Volunteer/Apply.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50ZWVyXEFwcGx5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Volunteer/Confirm.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm9sdW50ZWVyL0NvbmZpcm0uY3NodG1s
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Volunteer/Confirm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50ZWVyXENvbmZpcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Volunteer/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm9sdW50ZWVyL0RldGFpbHMuY3NodG1s
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Volunteer/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50ZWVyXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Volunteer/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm9sdW50ZWVyL0luZGV4LmNzaHRtbA==
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Volunteer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50ZWVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-6k8tc4l2t6
+[c:/Users/Afeziwe/OneDrive/Documents/vs projects/GiftOfTheGivers_web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-70mrvu7nl8

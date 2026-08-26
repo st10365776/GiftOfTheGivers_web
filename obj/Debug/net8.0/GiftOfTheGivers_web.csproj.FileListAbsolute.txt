@@ -29,3 +29,37 @@
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/obj/Debug/net8.0/ref/GiftOfTheGivers_web.dll
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/obj/Debug/net8.0/GiftOfTheGivers_web.sourcelink.json
 /Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/bin/Debug/net8.0/GiftOfTheGivers_web
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\bin\Debug\net8.0\appsettings.Development.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\bin\Debug\net8.0\appsettings.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\bin\Debug\net8.0\GiftOfTheGivers_web.staticwebassets.runtime.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\bin\Debug\net8.0\GiftOfTheGivers_web.staticwebassets.endpoints.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\bin\Debug\net8.0\GiftOfTheGivers_web.exe
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\bin\Debug\net8.0\GiftOfTheGivers_web.deps.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\bin\Debug\net8.0\GiftOfTheGivers_web.runtimeconfig.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\bin\Debug\net8.0\GiftOfTheGivers_web.dll
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\bin\Debug\net8.0\GiftOfTheGivers_web.pdb
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\rpswa.dswa.cache.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\GiftOfTheGivers_web.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\GiftOfTheGivers_web.AssemblyInfoInputs.cache
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\GiftOfTheGivers_web.AssemblyInfo.cs
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\GiftOfTheGivers_web.csproj.CoreCompileInputs.cache
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\GiftOfTheGivers_web.MvcApplicationPartsAssemblyInfo.cache
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\GiftOfTheGivers_web.RazorAssemblyInfo.cache
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\GiftOfTheGivers_web.RazorAssemblyInfo.cs
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\GiftOfTheGivers_web.sourcelink.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\rjimswa.dswa.cache.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\scopedcss\bundle\GiftOfTheGivers_web.styles.css
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\scopedcss\projectbundle\GiftOfTheGivers_web.bundle.scp.css
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\staticwebassets.build.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\staticwebassets.build.json.cache
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\staticwebassets.development.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\swae.build.ex.cache
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\GiftOfTheGivers_web.dll
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\refint\GiftOfTheGivers_web.dll
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\GiftOfTheGivers_web.pdb
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\GiftOfTheGivers_web.genruntimeconfig.cache
+c:\Users\Afeziwe\OneDrive\Documents\vs projects\GiftOfTheGivers_web\obj\Debug\net8.0\ref\GiftOfTheGivers_web.dll

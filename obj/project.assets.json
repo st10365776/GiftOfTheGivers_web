@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net8.0": {}
   },
@@ -8,25 +8,31 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/Users/ethangrunewald/.nuget/packages/": {}
+    "C:\\Users\\Afeziwe\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/GiftOfTheGivers_web.csproj",
+      "projectUniqueName": "C:\\Users\\Afeziwe\\OneDrive\\Documents\\vs projects\\GiftOfTheGivers_web\\GiftOfTheGivers_web.csproj",
       "projectName": "GiftOfTheGivers_web",
-      "projectPath": "/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/GiftOfTheGivers_web.csproj",
-      "packagesPath": "/Users/ethangrunewald/.nuget/packages/",
-      "outputPath": "/Users/ethangrunewald/RiderProjects/GiftOfTheGivers_web/GiftOfTheGivers_web/obj/",
+      "projectPath": "C:\\Users\\Afeziwe\\OneDrive\\Documents\\vs projects\\GiftOfTheGivers_web\\GiftOfTheGivers_web.csproj",
+      "packagesPath": "C:\\Users\\Afeziwe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Afeziwe\\OneDrive\\Documents\\vs projects\\GiftOfTheGivers_web\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/ethangrunewald/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Afeziwe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -45,7 +51,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -70,7 +77,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.424/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
