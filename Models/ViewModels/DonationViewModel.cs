@@ -1,3 +1,4 @@
+// Carries donation selections between the form and review pages.
 using System.ComponentModel.DataAnnotations;
 
 namespace GiftOfTheGivers_web.Models
@@ -6,6 +7,9 @@ namespace GiftOfTheGivers_web.Models
     {
         [Required]
         public string DonationType { get; set; } = "Once-off";
+
+        [Required]
+        public string Currency { get; set; } = "ZAR";
 
         [Required]
         [Range(1, 1000000)]

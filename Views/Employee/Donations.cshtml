@@ -2,9 +2,322 @@
     ViewData["Title"] = "Manage Donations";
 }
 
-<div class="container py-5">
-    <h1>Manage Donations</h1>
-    <a asp-controller="Employee" asp-action="DonationDetails">Donation details</a>
-    <a asp-controller="Employee" asp-action="Volunteers">Manage volunteers</a>
-    <a asp-controller="Employee" asp-action="Dashboard">Dashboard</a>
-</div>
+<section class="employee-page">
+    <div class="container py-5">
+
+        <div class="employee-header">
+            <div>
+                <span class="employee-label">Employee Portal</span>
+                <h1>Manage Donations</h1>
+                <p>
+                    View and manage donations received through
+                    Gift of the Givers.
+                </p>
+            </div>
+
+            <a asp-controller="Employee"
+               asp-action="Dashboard"
+               class="employee-back-button">
+                Back to Dashboard
+            </a>
+        </div>
+
+        <div class="donation-management-card">
+
+            <div class="management-header">
+                <div>
+                    <h2>Recent Donations</h2>
+                    <p>Donations currently available for management.</p>
+                </div>
+
+                <div class="donation-count">
+                    6 Donations
+                </div>
+            </div>
+
+            <div class="table-responsive">
+
+                <table class="employee-table">
+
+                    <thead>
+                        <tr>
+                            <th>Donor</th>
+                            <th>Amount</th>
+                            <th>Type</th>
+                            <th>Payment</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                <strong>John Smith</strong>
+                                <span class="donor-email">
+                                    john@example.com
+                                </span>
+                            </td>
+
+                            <td>
+                                <strong>R1 000</strong>
+                            </td>
+
+                            <td>
+                                Once-off
+                            </td>
+
+                            <td>
+                                Card
+                            </td>
+
+                            <td>
+                                27 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="donation-status completed">
+                                    Completed
+                                </span>
+                            </td>
+
+                            <td>
+                                <a asp-controller="Employee"
+                                   asp-action="DonationDetails"
+                                   class="view-donation">
+                                    View
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <strong>Anonymous</strong>
+                                <span class="donor-email">
+                                    Donor requested anonymity
+                                </span>
+                            </td>
+
+                            <td>
+                                <strong>R500</strong>
+                            </td>
+
+                            <td>
+                                Once-off
+                            </td>
+
+                            <td>
+                                EFT
+                            </td>
+
+                            <td>
+                                26 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="donation-status pending">
+                                    Pending
+                                </span>
+                            </td>
+
+                            <td>
+                                <a asp-controller="Employee"
+                                   asp-action="DonationDetails"
+                                   class="view-donation">
+                                    View
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <strong>Sarah Williams</strong>
+                                <span class="donor-email">
+                                    sarah@example.com
+                                </span>
+                            </td>
+
+                            <td>
+                                <strong>R250</strong>
+                            </td>
+
+                            <td>
+                                Monthly
+                            </td>
+
+                            <td>
+                                Card
+                            </td>
+
+                            <td>
+                                25 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="donation-status completed">
+                                    Completed
+                                </span>
+                            </td>
+
+                            <td>
+                                <a asp-controller="Employee"
+                                   asp-action="DonationDetails"
+                                   class="view-donation">
+                                    View
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <strong>Michael Brown</strong>
+                                <span class="donor-email">
+                                    michael@example.com
+                                </span>
+                            </td>
+
+                            <td>
+                                <strong>R2 500</strong>
+                            </td>
+
+                            <td>
+                                Once-off
+                            </td>
+
+                            <td>
+                                Card
+                            </td>
+
+                            <td>
+                                24 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="donation-status completed">
+                                    Completed
+                                </span>
+                            </td>
+
+                            <td>
+                                <a asp-controller="Employee"
+                                   asp-action="DonationDetails"
+                                   class="view-donation">
+                                    View
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <strong>Anonymous</strong>
+                                <span class="donor-email">
+                                    Donor requested anonymity
+                                </span>
+                            </td>
+
+                            <td>
+                                <strong>USD 100</strong>
+                            </td>
+
+                            <td>
+                                Once-off
+                            </td>
+
+                            <td>
+                                Card
+                            </td>
+
+                            <td>
+                                23 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="donation-status completed">
+                                    Completed
+                                </span>
+                            </td>
+
+                            <td>
+                                <a asp-controller="Employee"
+                                   asp-action="DonationDetails"
+                                   class="view-donation">
+                                    View
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <strong>David Jones</strong>
+                                <span class="donor-email">
+                                    david@example.com
+                                </span>
+                            </td>
+
+                            <td>
+                                <strong>EUR 250</strong>
+                            </td>
+
+                            <td>
+                                Monthly
+                            </td>
+
+                            <td>
+                                Card
+                            </td>
+
+                            <td>
+                                22 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="donation-status cancelled">
+                                    Cancelled
+                                </span>
+                            </td>
+
+                            <td>
+                                <a asp-controller="Employee"
+                                   asp-action="DonationDetails"
+                                   class="view-donation">
+                                    View
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="employee-navigation">
+
+            <a asp-controller="Employee"
+               asp-action="Dashboard">
+                Dashboard
+            </a>
+
+            <a asp-controller="Employee"
+               asp-action="DonationDetails">
+                Donation Details
+            </a>
+
+            <a asp-controller="Employee"
+               asp-action="Volunteers">
+                Manage Volunteers
+            </a>
+
+        </div>
+
+    </div>
+</section>
