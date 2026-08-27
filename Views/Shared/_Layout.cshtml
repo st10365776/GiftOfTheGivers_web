@@ -6,25 +6,11 @@
 
     <title>@ViewData["Title"] - Gift of the Givers</title>
     
-    <script>
-    if (sessionStorage.getItem("siteLoaded")) {
-        document.documentElement.classList.add("skip-loader");
-    }
-</script>
-
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 
 <body>
-
-<div class="page-loader" id="pageLoader">
-    <div class="loader-content">
-        <img src="~/images/logo1.png" alt="Gift of the Givers" />
-        <div class="loader-spinner"></div>
-        <p>Loading...</p>
-    </div>
-</div>
 
 <!-- Navigation -->
 <header>
@@ -35,9 +21,9 @@
                asp-controller="Home"
                asp-action="Index">
 
-                <img src="~/images/logo1.png"
-                     alt="Gift of the Givers"
-                     style="height: 120px; width: auto; max-height: 120px;"/>
+                <img class="gift-logo"
+                     src="~/images/logo1.png"
+                     alt="Gift of the Givers" />
 
             </a>
 
@@ -71,12 +57,31 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link"
-                           asp-controller="Donation"
-                           asp-action="Index">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                           href="#"
+                           id="donateDropdown"
+                           role="button"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">
                             Donate
                         </a>
+                        <ul class="dropdown-menu" aria-labelledby="donateDropdown">
+                            <li>
+                                <a class="dropdown-item"
+                                   asp-controller="Donation"
+                                   asp-action="Index">
+                                    Make a Donation
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item"
+                                   asp-controller="Donation"
+                                   asp-action="History">
+                                    Donation History
+                                </a>
+                            </li>
+                        </ul>
                     </li>
 
                     <li class="nav-item">
@@ -159,6 +164,12 @@
                     <li>
                         <a asp-controller="Donation" asp-action="Index">
                             Donate
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-controller="Donation" asp-action="History">
+                            Donation History
                         </a>
                     </li>
 
