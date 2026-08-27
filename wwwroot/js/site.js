@@ -1,30 +1,75 @@
-﻿const typeButtons = document.querySelectorAll(".donation-type-btn");
+﻿const donationTypeButtons = document.querySelectorAll(".donation-type-btn");
+const currencyButtons = document.querySelectorAll(".currency-btn");
 const amountButtons = document.querySelectorAll(".amount-btn");
 
 const donationType = document.getElementById("donationType");
+const donationCurrency = document.getElementById("donationCurrency");
 const donationAmount = document.getElementById("donationAmount");
 
 const customButton = document.getElementById("customButton");
 const customContainer = document.getElementById("customAmountContainer");
 const customAmount = document.getElementById("customAmount");
 
-if (typeButtons.length > 0) {
-    typeButtons.forEach(button => {
+const summaryAmount = document.getElementById("summaryAmount");
+const summaryType = document.getElementById("summaryType");
+
+
+if (donationTypeButtons.length > 0) {
+
+    donationTypeButtons.forEach(button => {
+
         button.addEventListener("click", function () {
 
-            typeButtons.forEach(btn => {
+            donationTypeButtons.forEach(btn => {
                 btn.classList.remove("active");
             });
 
             this.classList.add("active");
 
-            donationType.value = this.dataset.type;
+            if (donationType) {
+                donationType.value = this.dataset.type;
+            }
+
+            if (summaryType) {
+                summaryType.textContent = this.dataset.type;
+            }
+
         });
+
     });
+
 }
 
+
+if (currencyButtons.length > 0) {
+
+    currencyButtons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            currencyButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            this.classList.add("active");
+
+            if (donationCurrency) {
+                donationCurrency.value = this.dataset.currency;
+            }
+
+            updateDonationSummary();
+
+        });
+
+    });
+
+}
+
+
 if (amountButtons.length > 0) {
+
     amountButtons.forEach(button => {
+
         button.addEventListener("click", function () {
 
             amountButtons.forEach(btn => {
@@ -33,44 +78,83 @@ if (amountButtons.length > 0) {
 
             this.classList.add("active");
 
+
             if (this === customButton) {
-                customContainer.style.display = "block";
-                donationAmount.value = "";
-                customAmount.focus();
+
+                if (customContainer) {
+                    customContainer.style.display = "block";
+                }
+
+                if (donationAmount) {
+                    donationAmount.value = "";
+                }
+
+                if (customAmount) {
+                    customAmount.focus();
+                }
+
+                updateDonationSummary();
+
             } else {
-                customContainer.style.display = "none";
-                donationAmount.value = this.dataset.amount;
+
+                if (customContainer) {
+                    customContainer.style.display = "none";
+                }
+
+                if (donationAmount) {
+                    donationAmount.value = this.dataset.amount;
+                }
+
+                updateDonationSummary();
+
             }
+
         });
+
     });
+
 }
+
 
 if (customAmount) {
+
     customAmount.addEventListener("input", function () {
-        donationAmount.value = this.value;
+
+        if (donationAmount) {
+            donationAmount.value = this.value;
+        }
+
+        updateDonationSummary();
+
     });
+
 }
 
-// Page Loader
 
-window.addEventListener("load", function () {
-    const loader = document.getElementById("pageLoader");
+function updateDonationSummary() {
 
-    if (!loader) {
+    if (!summaryAmount) {
         return;
     }
 
-    if (sessionStorage.getItem("siteLoaded")) {
-        loader.remove();
+    const currency = donationCurrency
+        ? donationCurrency.value
+        : "ZAR";
+
+    const amount = donationAmount
+        ? donationAmount.value
+        : "";
+
+
+    if (!amount) {
+
+        summaryAmount.textContent = currency + " 0";
+
         return;
     }
 
-    setTimeout(function () {
-        loader.classList.add("hidden");
-        sessionStorage.setItem("siteLoaded", "true");
 
-        setTimeout(function () {
-            loader.remove();
-        }, 1000);
-    }, 1000);
-});
+    summaryAmount.textContent =
+        currency + " " + Number(amount).toLocaleString();
+
+}
