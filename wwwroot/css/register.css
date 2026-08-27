@@ -1,0 +1,903 @@
+/* =========================================
+   GIFT OF THE GIVERS - REGISTER PAGE
+   ========================================= */
+
+:root {
+    --gotg-green: #00843D;
+    --gotg-dark-green: #006B32;
+    --gotg-light-green: #EAF7EF;
+    --gotg-soft-green: #F4FBF6;
+    --gotg-white: #FFFFFF;
+    --gotg-text: #1F2937;
+    --gotg-gray: #6B7280;
+    --gotg-border: #DDE7E0;
+}
+
+
+/* =========================================
+   PAGE
+   ========================================= */
+
+.register-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    background: var(--gotg-soft-green);
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   LEFT HERO
+   ========================================= */
+
+.register-hero {
+
+    width: 45%;
+
+    min-height: 100vh;
+
+    background-image:
+        url('/images/gotg-register.png');
+
+    background-size: cover;
+
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    animation: heroSlide 1s ease forwards;
+}
+
+
+.register-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 132, 61, 0.92),
+            rgba(0, 75, 35, 0.70)
+        );
+}
+
+
+.register-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: white;
+
+    max-width: 550px;
+
+    padding: 60px;
+
+    animation:
+        fadeUp 1s ease 0.2s both;
+}
+
+
+/* =========================================
+   HERO LOGO
+   ========================================= */
+
+.register-logo {
+
+    width: 65px;
+
+    height: 65px;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+    margin-bottom: 28px;
+
+    -webkit-backdrop-filter: blur(8px);
+
+    backdrop-filter: blur(8px);
+
+    animation:
+        floating 3s ease-in-out infinite;
+}
+
+
+.register-hero-content h1 {
+
+    font-size: 48px;
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    margin-bottom: 22px;
+}
+
+
+.register-hero-content p {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255, 255, 255, 0.9);
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   HERO POINTS
+   ========================================= */
+
+.register-points {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+.register-point {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 14px;
+
+    padding: 11px 15px;
+
+    width: fit-content;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 30px;
+
+    -webkit-backdrop-filter: blur(8px);
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.register-point:hover {
+
+    transform:
+        translateX(6px);
+}
+
+
+.register-point i {
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   REGISTER SECTION
+   ========================================= */
+
+.register-section {
+
+    width: 55%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 35px 50px;
+
+    animation:
+        sectionSlide 1s ease forwards;
+}
+
+
+/* =========================================
+   CARD
+   ========================================= */
+
+.register-card {
+
+    width: 100%;
+
+    max-width: 620px;
+
+    background:
+        var(--gotg-white);
+
+    padding: 38px 45px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 80, 40, 0.10);
+
+    animation:
+        fadeUp 1s ease 0.2s both;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.register-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+
+.register-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        var(--gotg-light-green);
+
+    color:
+        var(--gotg-green);
+
+    border-radius: 17px;
+
+    font-size: 27px;
+}
+
+
+.register-header h2 {
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    color:
+        var(--gotg-text);
+
+    margin: 0 0 3px;
+}
+
+
+.register-header p {
+
+    color:
+        var(--gotg-gray);
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   TWO COLUMN INPUT
+   ========================================= */
+
+.name-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* =========================================
+   INPUTS
+   ========================================= */
+
+.input-group-custom {
+
+    margin-bottom: 17px;
+}
+
+
+.input-group-custom label {
+
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color:
+        var(--gotg-text);
+
+    margin-bottom: 7px;
+}
+
+
+.input-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.input-wrapper > i {
+
+    position: absolute;
+
+    left: 15px;
+
+    color:
+        var(--gotg-green);
+
+    font-size: 16px;
+
+    z-index: 2;
+}
+
+
+.input-wrapper input,
+.input-wrapper select {
+
+    width: 100%;
+
+    height: 48px;
+
+    border:
+        1px solid var(--gotg-border);
+
+    border-radius: 11px;
+
+    padding:
+        0 42px;
+
+    font-size: 14px;
+
+    color:
+        var(--gotg-text);
+
+    background:
+        #FAFCFB;
+
+    outline: none;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+
+    border-color:
+        var(--gotg-green);
+
+    background:
+        white;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(0, 132, 61, 0.10);
+}
+
+
+.input-wrapper input::placeholder {
+
+    color: #9CA3AF;
+}
+
+
+/* =========================================
+   SELECT
+   ========================================= */
+
+.input-wrapper select {
+
+    appearance: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   PASSWORD TOGGLE
+   ========================================= */
+
+.password-toggle {
+
+    position: absolute;
+
+    right: 12px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #8A948E;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    padding: 5px;
+
+    transition: 0.3s;
+}
+
+
+.password-toggle:hover {
+
+    color:
+        var(--gotg-green);
+}
+
+
+/* =========================================
+   TERMS
+   ========================================= */
+
+.terms {
+
+    margin:
+        3px 0 20px;
+
+    font-size: 12px;
+
+    color:
+        var(--gotg-gray);
+
+    line-height: 1.5;
+}
+
+
+.terms label {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+
+.terms input {
+
+    margin-top: 3px;
+
+    accent-color:
+        var(--gotg-green);
+}
+
+
+.terms a {
+
+    color:
+        var(--gotg-green);
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+.terms a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   REGISTER BUTTON
+   ========================================= */
+
+.register-btn {
+
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+        var(--gotg-green);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    transition:
+        all 0.3s ease;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 132, 61, 0.20);
+}
+
+
+.register-btn:hover {
+
+    background:
+        var(--gotg-dark-green);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(0, 132, 61, 0.30);
+}
+
+
+.register-btn:active {
+
+    transform:
+        translateY(0);
+}
+
+
+.register-btn i {
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.register-btn:hover i {
+
+    transform:
+        translateX(5px);
+}
+
+
+/* =========================================
+   LOGIN TEXT
+   ========================================= */
+
+.login-text {
+
+    text-align: center;
+
+    margin-top: 22px;
+
+    color:
+        var(--gotg-gray);
+
+    font-size: 13px;
+}
+
+
+.login-text a {
+
+    color:
+        var(--gotg-green);
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.login-text a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   QUICK LINKS
+   ========================================= */
+
+.quick-links {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 18px;
+
+    font-size: 12px;
+}
+
+
+.quick-links a {
+
+    color:
+        var(--gotg-gray);
+
+    text-decoration: none;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    transition: 0.3s;
+}
+
+
+.quick-links a:hover {
+
+    color:
+        var(--gotg-green);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.quick-links span {
+
+    color: #D1D5DB;
+}
+
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+@keyframes heroSlide {
+
+    from {
+
+        transform:
+            translateX(-40px);
+
+        opacity: 0;
+    }
+
+    to {
+
+        transform:
+            translateX(0);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes sectionSlide {
+
+    from {
+
+        transform:
+            translateX(40px);
+
+        opacity: 0;
+    }
+
+    to {
+
+        transform:
+            translateX(0);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        transform:
+            translateY(25px);
+
+        opacity: 0;
+    }
+
+    to {
+
+        transform:
+            translateY(0);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes floating {
+
+    0%, 100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px);
+    }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .register-hero {
+
+        width: 40%;
+    }
+
+    .register-section {
+
+        width: 60%;
+
+        padding:
+            30px;
+    }
+
+    .register-card {
+
+        padding:
+            30px;
+    }
+
+    .register-hero-content {
+
+        padding:
+            35px;
+    }
+
+    .register-hero-content h1 {
+
+        font-size:
+            38px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .register-page {
+
+        flex-direction:
+            column;
+    }
+
+    .register-hero {
+
+        width: 100%;
+
+        min-height:
+            350px;
+    }
+
+    .register-section {
+
+        width: 100%;
+
+        padding:
+            25px 18px;
+    }
+
+    .register-hero-content {
+
+        padding:
+            35px;
+    }
+
+    .register-hero-content h1 {
+
+        font-size:
+            35px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .name-row {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 0;
+    }
+
+    .register-card {
+
+        padding:
+            28px 20px;
+
+        border-radius:
+            18px;
+    }
+
+    .register-header h2 {
+
+        font-size:
+            26px;
+    }
+
+    .register-hero {
+
+        min-height:
+            320px;
+    }
+
+    .register-point {
+
+        font-size:
+            12px;
+    }
+}

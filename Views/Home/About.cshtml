@@ -1,13 +1,646 @@
 @{
     ViewData["Title"] = "About";
 }
+<link rel="stylesheet" href="~/css/about.css" />
 
-<section class="section">
-    <div class="container">
-        <h1>About Gift of the Givers</h1>
-        <p>Learn how you can support our humanitarian work.</p>
-        <a class="btn btn-primary-gift" asp-controller="Donation" asp-action="Index">Donate</a>
-        <a class="btn btn-primary-gift" asp-controller="Volunteer" asp-action="Index">Volunteer</a>
-        <a class="btn btn-primary-gift" asp-controller="Home" asp-action="Contact">Contact Us</a>
+     @* HERO SECTION *@
+
+
+<section class="about-hero">
+
+    <div class="about-hero-overlay"></div>
+
+    <div class="about-hero-content">
+
+        <div class="about-badge">
+            <i class="bi bi-heart-fill"></i>
+            Serving Humanity
+        </div>
+
+        <h1>
+            Hope Starts With
+            <span>People Who Care.</span>
+        </h1>
+
+        <p>
+            We believe that when people come together,
+            they can make a real difference in the lives
+            of others.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#our-story" class="primary-btn">
+                Discover Our Story
+                <i class="bi bi-arrow-down"></i>
+            </a>
+
+            <a asp-controller="Account"
+               asp-action="Register"
+               class="secondary-btn">
+                Join Us
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
     </div>
+
+    <div class="hero-scroll">
+        <i class="bi bi-mouse"></i>
+        <span>Scroll to explore</span>
+    </div>
+
 </section>
+
+
+
+     @* INTRODUCTION *@
+
+<section class="about-intro reveal" id="our-story">
+
+    <div class="intro-image">
+
+        <div class="image-decoration"></div>
+
+        <img src="~/images/gotg-login.jpg"
+             alt="Gift of the Givers humanitarian support" />
+
+        <div class="experience-card">
+
+            <strong>1992</strong>
+
+            <span>
+                Our journey
+                began
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="intro-content">
+
+        <span class="section-label">
+            WHO WE ARE
+        </span>
+
+        <h2>
+            Making a Difference
+            Where It Matters Most
+        </h2>
+
+        <p>
+            Gift of the Givers is a humanitarian organisation
+            that responds to people affected by disasters,
+            hunger and difficult situations.
+        </p>
+
+        <p>
+            Since its establishment in 1992, the organisation
+            has provided humanitarian assistance in South
+            Africa and around the world.
+        </p>
+
+        <p>
+            The goal is simple: help people, restore dignity
+            and give hope when it is needed most.
+        </p>
+
+        <div class="quote-box">
+
+            <i class="bi bi-quote"></i>
+
+            <p>
+                Best among people are those who
+                benefit mankind.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+     @* MISSION / VALUES *@
+
+
+<section class="values-section">
+
+    <div class="section-heading reveal">
+
+        <span class="section-label">
+            WHAT DRIVES US
+        </span>
+
+        <h2>
+            Our Mission Is Bigger
+            Than Us
+        </h2>
+
+        <p>
+            Everything we do is focused on helping people
+            and strengthening communities.
+        </p>
+
+    </div>
+
+
+    <div class="values-grid">
+
+        <!-- CARD 1 -->
+
+        <div class="value-card reveal">
+
+            <div class="value-icon">
+                <i class="bi bi-heart-fill"></i>
+            </div>
+
+            <h3>Compassion</h3>
+
+            <p>
+                We care about people and respond to
+                communities when they need help.
+            </p>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+
+        <div class="value-card reveal">
+
+            <div class="value-icon">
+                <i class="bi bi-shield-check"></i>
+            </div>
+
+            <h3>Dignity</h3>
+
+            <p>
+                We believe every person deserves to be
+                treated with respect and dignity.
+            </p>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+
+        <div class="value-card reveal">
+
+            <div class="value-icon">
+                <i class="bi bi-lightning-charge-fill"></i>
+            </div>
+
+            <h3>Fast Response</h3>
+
+            <p>
+                When disaster happens, quick action can
+                save lives and provide hope.
+            </p>
+
+        </div>
+
+
+        <!-- CARD 4 -->
+
+        <div class="value-card reveal">
+
+            <div class="value-icon">
+                <i class="bi bi-people-fill"></i>
+            </div>
+
+            <h3>Unity</h3>
+
+            <p>
+                We bring people together to create
+                meaningful change.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+     @* WHAT WE DO *@
+
+<section class="what-we-do">
+
+    <div class="section-heading reveal">
+
+        <span class="section-label">
+            WHAT WE DO
+        </span>
+
+        <h2>
+            Helping Communities
+            Move Forward
+        </h2>
+
+        <p>
+            Our work covers different areas where
+            communities need support.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+        <div class="service-card reveal">
+
+            <div class="service-number">01</div>
+
+            <div class="service-icon">
+                <i class="bi bi-house-heart-fill"></i>
+            </div>
+
+            <h3>Disaster Response</h3>
+
+            <p>
+                Providing emergency support to people
+                affected by disasters and crises.
+            </p>
+
+            <a href="#">
+                Learn more
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+            <div class="service-number">02</div>
+
+            <div class="service-icon">
+                <i class="bi bi-basket2-fill"></i>
+            </div>
+
+            <h3>Hunger Alleviation</h3>
+
+            <p>
+                Supporting people and communities
+                facing food insecurity.
+            </p>
+
+            <a href="#">
+                Learn more
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+            <div class="service-number">03</div>
+
+            <div class="service-icon">
+                <i class="bi bi-droplet-fill"></i>
+            </div>
+
+            <h3>Water</h3>
+
+            <p>
+                Helping communities access clean and
+                reliable water during difficult times.
+            </p>
+
+            <a href="#">
+                Learn more
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+            <div class="service-number">04</div>
+
+            <div class="service-icon">
+                <i class="bi bi-heart-pulse-fill"></i>
+            </div>
+
+            <h3>Healthcare</h3>
+
+            <p>
+                Supporting healthcare initiatives and
+                communities that need medical assistance.
+            </p>
+
+            <a href="#">
+                Learn more
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+            <div class="service-number">05</div>
+
+            <div class="service-icon">
+                <i class="bi bi-book-fill"></i>
+            </div>
+
+            <h3>Education</h3>
+
+            <p>
+                Supporting education and creating
+                opportunities for young people.
+            </p>
+
+            <a href="#">
+                Learn more
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+            <div class="service-number">06</div>
+
+            <div class="service-icon">
+                <i class="bi bi-graph-up-arrow"></i>
+            </div>
+
+            <h3>Human Development</h3>
+
+            <p>
+                Helping people build skills and create
+                better opportunities for their future.
+            </p>
+
+            <a href="#">
+                Learn more
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+     @* STATISTICS *@
+
+
+<section class="stats-section">
+
+    <div class="stats-heading reveal">
+
+        <span class="section-label">
+            OUR IMPACT
+        </span>
+
+        <h2>
+            Every Action Creates
+            an Impact
+        </h2>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+        <div class="stat-item reveal">
+
+            <div class="stat-icon">
+                <i class="bi bi-globe2"></i>
+            </div>
+
+            <div class="stat-number">
+                <span class="counter" data-target="47">0</span>+
+            </div>
+
+            <p>Countries reached</p>
+
+        </div>
+
+
+        <div class="stat-item reveal">
+
+            <div class="stat-icon">
+                <i class="bi bi-calendar-heart"></i>
+            </div>
+
+            <div class="stat-number">
+                <span class="counter" data-target="33">0</span>
+            </div>
+
+            <p>Years of humanitarian work</p>
+
+        </div>
+
+
+        <div class="stat-item reveal">
+
+            <div class="stat-icon">
+                <i class="bi bi-box-seam"></i>
+            </div>
+
+            <div class="stat-number">
+                <span class="counter" data-target="120000">0</span>+
+            </div>
+
+            <p>Food parcels per year</p>
+
+        </div>
+
+
+        <div class="stat-item reveal">
+
+            <div class="stat-icon">
+                <i class="bi bi-droplet"></i>
+            </div>
+
+            <div class="stat-number">
+                <span class="counter" data-target="3">0</span>M+
+            </div>
+
+            <p>Litres of water delivered monthly</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+     @* CALL TO ACTION *@
+
+
+<section class="about-cta reveal">
+
+    <div class="cta-content">
+
+        <div class="cta-icon">
+            <i class="bi bi-heart-fill"></i>
+        </div>
+
+        <span class="section-label">
+            BE PART OF THE CHANGE
+        </span>
+
+        <h2>
+            You Can Make
+            a Difference Too.
+        </h2>
+
+        <p>
+            Whether you volunteer, donate or simply share
+            information, your actions can help someone
+            who needs it.
+        </p>
+
+        <div class="cta-buttons">
+
+            <a asp-controller="Account"
+               asp-action="Register"
+               class="cta-primary">
+                Join Our Community
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+            <a asp-controller="Home"
+               asp-action="Index"
+               class="cta-secondary">
+                Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+    const revealObserver =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("active");
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    revealElements.forEach(element => {
+
+        revealObserver.observe(element);
+
+    });
+
+
+    /* ================================
+       COUNTER ANIMATION
+    ================================= */
+
+    const counters =
+        document.querySelectorAll(".counter");
+
+    let counterStarted = false;
+
+
+    const counterObserver =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting &&
+                        !counterStarted
+                    ) {
+
+                        counterStarted = true;
+
+                        counters.forEach(counter => {
+
+                            const target =
+                                Number(
+                                    counter.dataset.target
+                                );
+
+                            let current = 0;
+
+                            const increment =
+                                target / 80;
+
+                            const updateCounter =
+                                () => {
+
+                                    current += increment;
+
+                                    if (current < target) {
+
+                                        counter.textContent =
+                                            Math.ceil(current)
+                                                .toLocaleString();
+
+                                        requestAnimationFrame(
+                                            updateCounter
+                                        );
+
+                                    } else {
+
+                                        counter.textContent =
+                                            target.toLocaleString();
+
+                                    }
+
+                                };
+
+                            updateCounter();
+
+                        });
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.5
+            }
+        );
+
+
+    const statsSection =
+        document.querySelector(".stats-section");
+
+    if (statsSection) {
+
+        counterObserver.observe(statsSection);
+
+    }
+
+</script>

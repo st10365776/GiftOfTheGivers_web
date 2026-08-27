@@ -2,9 +2,374 @@
     ViewData["Title"] = "Register";
 }
 
-<div class="container py-5">
-    <h1>Register</h1>
-    <a asp-controller="Account" asp-action="Login">Already registered? Login</a>
-    <a asp-controller="Account" asp-action="Profile">View profile</a>
-    <a asp-controller="Home" asp-action="Index">Return home</a>
+<link rel="stylesheet" href="~/css/register.css" />
+
+<div class="register-page">
+
+    <!-- LEFT SIDE -->
+    <div class="register-hero">
+
+        <div class="register-overlay"></div>
+
+        <div class="register-hero-content">
+
+            <div class="register-logo">
+                <i class="bi bi-heart-fill"></i>
+            </div>
+
+            <h1>Be Part of<br />Something Bigger.</h1>
+
+            <p>
+                Create your account and join a community of people
+                working together to help those in need.
+            </p>
+
+            <div class="register-points">
+
+                <div class="register-point">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Support communities in need</span>
+                </div>
+
+                <div class="register-point">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Volunteer during relief operations</span>
+                </div>
+
+                <div class="register-point">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Stay updated on important events</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+    <div class="register-section">
+
+        <div class="register-card">
+
+            <div class="register-header">
+
+                <div class="register-icon">
+                    <i class="bi bi-person-plus-fill"></i>
+                </div>
+
+                <div>
+                    <h2>Create Account</h2>
+
+                    <p>
+                        Join us and make a difference
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form>
+
+                <!-- FIRST + LAST NAME -->
+                <div class="name-row">
+
+                    <div class="input-group-custom">
+
+                        <label for="firstName">
+                            First Name
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-person"></i>
+
+                            <input type="text"
+                                   id="firstName"
+                                   name="firstName"
+                                   placeholder="First name"
+                                   required />
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group-custom">
+
+                        <label for="lastName">
+                            Last Name
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-person"></i>
+
+                            <input type="text"
+                                   id="lastName"
+                                   name="lastName"
+                                   placeholder="Last name"
+                                   required />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="input-group-custom">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="bi bi-envelope"></i>
+
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               placeholder="Enter your email"
+                               required />
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE -->
+                <div class="input-group-custom">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="bi bi-telephone"></i>
+
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               placeholder="Enter your phone number"
+                               required />
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACCOUNT TYPE -->
+                <div class="input-group-custom">
+
+                    <label for="accountType">
+                        I want to join as
+                    </label>
+
+                    <div class="input-wrapper select-wrapper">
+
+                        <i class="bi bi-people"></i>
+
+                        <select id="accountType"
+                                name="accountType"
+                                required>
+
+                            <option value="" disabled selected>
+                                Select account type
+                            </option>
+
+                            <option value="Volunteer">
+                                Volunteer
+                            </option>
+
+                            <option value="Donor">
+                                Donor
+                            </option>
+
+                            <option value="General User">
+                                General User
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="name-row">
+
+                    <div class="input-group-custom">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-lock"></i>
+
+                            <input type="password"
+                                   id="password"
+                                   name="password"
+                                   placeholder="Create password"
+                                   required />
+
+                            <button type="button"
+                                    class="password-toggle"
+                                    onclick="togglePassword('password', 'eyeIcon1')">
+
+                                <i class="bi bi-eye"
+                                   id="eyeIcon1"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group-custom">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-lock"></i>
+
+                            <input type="password"
+                                   id="confirmPassword"
+                                   name="confirmPassword"
+                                   placeholder="Confirm password"
+                                   required />
+
+                            <button type="button"
+                                    class="password-toggle"
+                                    onclick="togglePassword('confirmPassword', 'eyeIcon2')">
+
+                                <i class="bi bi-eye"
+                                   id="eyeIcon2"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TERMS -->
+                <div class="terms">
+
+                    <label>
+
+                        <input type="checkbox"
+                               required />
+
+                        <span>
+                            I agree to the
+                            <a href="#">Terms & Conditions</a>
+                            and
+                            <a href="#">Privacy Policy</a>.
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- REGISTER BUTTON -->
+                <button type="submit"
+                        class="register-btn">
+
+                    <span>Create Account</span>
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <!-- LOGIN LINK -->
+            <div class="login-text">
+
+                Already have an account?
+
+                <a asp-controller="Account"
+                   asp-action="Login">
+
+                    Sign in
+
+                </a>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+            <div class="quick-links">
+
+                <a asp-controller="Home"
+                   asp-action="Index">
+
+                    <i class="bi bi-house"></i>
+                    Home
+
+                </a>
+
+                <span>|</span>
+
+                <a asp-controller="Account"
+                   asp-action="Login">
+
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    Login
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
+
+
+<script>
+
+    function togglePassword(inputId, iconId) {
+
+        const password =
+            document.getElementById(inputId);
+
+        const eyeIcon =
+            document.getElementById(iconId);
+
+        if (password.type === "password") {
+
+            password.type = "text";
+
+            eyeIcon.classList.remove("bi-eye");
+
+            eyeIcon.classList.add("bi-eye-slash");
+
+        } else {
+
+            password.type = "password";
+
+            eyeIcon.classList.remove("bi-eye-slash");
+
+            eyeIcon.classList.add("bi-eye");
+        }
+    }
+
+</script>
