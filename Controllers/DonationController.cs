@@ -1,5 +1,5 @@
-using GiftOfTheGivers_web.Models;
 using Microsoft.AspNetCore.Mvc;
+using GiftOfTheGivers_web.Models;
 
 namespace GiftOfTheGivers_web.Controllers
 {
@@ -14,35 +14,44 @@ namespace GiftOfTheGivers_web.Controllers
         [HttpPost]
         public IActionResult Index(DonationViewModel model)
         {
-            if (model.Amount <= 0)
-            {
-                ModelState.AddModelError("Amount", "Please select a donation amount.");
-            }
-
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
 
-            return View("Details", model);
+            return RedirectToAction(nameof(Details), model);
         }
 
-        public IActionResult OnceOff()
+        [HttpGet]
+        public IActionResult Details(DonationViewModel model)
         {
-            return RedirectToAction("Index");
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(model);
         }
 
-        public IActionResult Monthly()
+        [HttpPost]
+        public IActionResult Complete(DonationViewModel model)
         {
-            return RedirectToAction("Index");
+            if (!ModelState.IsValid)
+            {
+                return View("Details", model);
+            }
+
+            return RedirectToAction(nameof(ThankYou), new { anonymous = model.IsAnonymous });
         }
 
-        public IActionResult Details()
+        [HttpGet]
+        public IActionResult ThankYou()
         {
             return View();
         }
 
-        public IActionResult ThankYou()
+        [HttpGet]
+        public IActionResult History()
         {
             return View();
         }

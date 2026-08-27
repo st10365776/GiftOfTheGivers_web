@@ -1,0 +1,126 @@
+@{
+    ViewData["Title"] = "Donation History";
+}
+
+<section class="donation-page">
+
+    <div class="container">
+
+        <div class="donation-header">
+
+            <span class="hero-label">
+                Your Donations
+            </span>
+
+            <h1>Donation History</h1>
+
+            <p>
+                View your previous donations and download
+                your donation documents.
+            </p>
+
+        </div>
+
+
+        <div class="history-card">
+
+            <div class="history-header">
+                <div>
+                    <h2>Your Donations</h2>
+                    <p>Recent donation activity</p>
+                </div>
+
+                <a asp-controller="Donation"
+                   asp-action="Index"
+                   class="btn btn-donate">
+                    Make a Donation
+                </a>
+            </div>
+
+
+            <div class="donation-history">
+
+                <div class="history-item">
+
+                    <div>
+                        <strong>R500 ZAR</strong>
+                        <span>26 August 2026</span>
+                    </div>
+
+                    <div>
+                        <span>Once-off</span>
+                    </div>
+
+                    <div>
+                        <span class="status-completed">
+                            Completed
+                        </span>
+                    </div>
+
+                    <div>
+                        <button class="btn certificate-btn">
+                            Tax Certificate
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="history-item">
+
+                    <div>
+                        <strong>$50 USD</strong>
+                        <span>12 August 2026</span>
+                    </div>
+
+                    <div>
+                        <span>Monthly</span>
+                    </div>
+
+                    <div>
+                        <span class="status-completed">
+                            Completed
+                        </span>
+                    </div>
+
+                    <div>
+                        <button class="btn certificate-btn">
+                            Tax Certificate
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="history-item">
+
+                    <div>
+                        <strong>€100 EUR</strong>
+                        <span>4 July 2026</span>
+                    </div>
+
+                    <div>
+                        <span>Once-off</span>
+                    </div>
+
+                    <div>
+                        <span class="status-completed">
+                            Completed
+                        </span>
+                    </div>
+
+                    <div>
+                        <button class="btn certificate-btn">
+                            Tax Certificate
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

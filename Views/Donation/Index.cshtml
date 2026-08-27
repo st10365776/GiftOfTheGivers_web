@@ -1,14 +1,18 @@
 @model GiftOfTheGivers_web.Models.DonationViewModel
 
 @{
-ViewData["Title"] = "Make a Donation";
+    ViewData["Title"] = "Make a Donation";
 }
 
 <section class="donation-page">
+
     <div class="container">
 
         <div class="donation-header">
-            <span class="hero-label">Support Our Work</span>
+
+            <span class="hero-label">
+                Support Our Work
+            </span>
 
             <h1>Make a Donation</h1>
 
@@ -16,11 +20,15 @@ ViewData["Title"] = "Make a Donation";
                 Your donation helps provide essential humanitarian
                 assistance to communities in need.
             </p>
+
         </div>
+
 
         <div class="donation-card">
 
-            <form asp-controller="Donation" asp-action="Index" method="post">
+            <form asp-controller="Donation"
+                  asp-action="Index"
+                  method="post">
 
                 <h2>How would you like to donate?</h2>
 
@@ -44,6 +52,40 @@ ViewData["Title"] = "Make a Donation";
                        id="donationType"
                        name="DonationType"
                        value="Once-off" />
+
+
+                <h3>Donation currency</h3>
+
+                <div class="currency-options">
+
+                    <button type="button"
+                            class="currency-btn active"
+                            data-currency="ZAR">
+                        ZAR
+                        <span>South African Rand</span>
+                    </button>
+
+                    <button type="button"
+                            class="currency-btn"
+                            data-currency="USD">
+                        USD
+                        <span>US Dollar</span>
+                    </button>
+
+                    <button type="button"
+                            class="currency-btn"
+                            data-currency="EUR">
+                        EUR
+                        <span>Euro</span>
+                    </button>
+
+                </div>
+
+                <input type="hidden"
+                       id="donationCurrency"
+                       name="Currency"
+                       value="ZAR" />
+
 
                 <h3>Select amount</h3>
 
@@ -89,10 +131,11 @@ ViewData["Title"] = "Make a Donation";
 
                 <input type="hidden"
                        id="donationAmount"
-                       name="Amount"
-                       value="" />
+                       name="Amount" />
 
-                <div class="custom-amount" id="customAmountContainer">
+
+                <div class="custom-amount"
+                     id="customAmountContainer">
 
                     <label for="customAmount">
                         Custom amount
@@ -106,9 +149,6 @@ ViewData["Title"] = "Make a Donation";
 
                 </div>
 
-                <span asp-validation-for="Amount"
-                      class="text-danger">
-                </span>
 
                 <h3>Payment Method</h3>
 
@@ -121,9 +161,12 @@ ViewData["Title"] = "Make a Donation";
                                value="Card"
                                checked />
 
-                        <span>Credit / Debit Card</span>
+                        <span>
+                            Credit / Debit Card
+                        </span>
 
                     </label>
+
 
                     <label class="payment-option">
 
@@ -131,11 +174,55 @@ ViewData["Title"] = "Make a Donation";
                                name="PaymentMethod"
                                value="EFT" />
 
-                        <span>EFT</span>
+                        <span>
+                            EFT
+                        </span>
 
                     </label>
 
                 </div>
+
+
+                <div class="anonymous-option">
+
+                    <label>
+
+                        <input type="checkbox"
+                               name="DonateAnonymously"
+                               value="true" />
+
+                        <span>
+                            Donate anonymously
+                        </span>
+
+                    </label>
+
+                    <p>
+                        Your name will not be displayed publicly
+                        as a donor.
+                    </p>
+
+                </div>
+
+
+                <div class="donation-summary">
+
+                    <div>
+                        <span>Donation</span>
+                        <strong id="summaryAmount">
+                            R0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Frequency</span>
+                        <strong id="summaryType">
+                            Once-off
+                        </strong>
+                    </div>
+
+                </div>
+
 
                 <div class="donation-action">
 
@@ -151,4 +238,5 @@ ViewData["Title"] = "Make a Donation";
         </div>
 
     </div>
+
 </section>

@@ -19,41 +19,55 @@
 
         <div class="donation-card">
 
-            <div class="donation-summary">
+            <form asp-controller="Donation"
+                  asp-action="Complete"
+                  method="post">
 
-                <div class="summary-row">
-                    <span>Donation Type</span>
-                    <strong>@Model.DonationType</strong>
+                <input type="hidden" asp-for="DonationType" />
+                <input type="hidden" asp-for="Amount" />
+                <input type="hidden" asp-for="PaymentMethod" />
+                <input type="hidden" asp-for="IsAnonymous" />
+
+                <div class="donation-summary">
+
+                    <div class="summary-row">
+                        <span>Donation Type</span>
+                        <strong>@Model.DonationType</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Amount</span>
+                        <strong>R @Model.Amount.ToString("N2")</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Payment Method</span>
+                        <strong>@Model.PaymentMethod</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Donor identity</span>
+                        <strong>@(Model.IsAnonymous ? "Anonymous" : "Provided at payment")</strong>
+                    </div>
+
                 </div>
 
-                <div class="summary-row">
-                    <span>Amount</span>
-                    <strong>R @Model.Amount.ToString("N2")</strong>
+                <div class="donation-action">
+
+                    <a asp-controller="Donation"
+                       asp-action="Index"
+                       class="btn btn-outline-secondary">
+                        Go Back
+                    </a>
+
+                    <button type="submit"
+                            class="btn btn-donate-continue">
+                        Complete Donation
+                    </button>
+
                 </div>
 
-                <div class="summary-row">
-                    <span>Payment Method</span>
-                    <strong>@Model.PaymentMethod</strong>
-                </div>
-
-            </div>
-
-            <div class="donation-action">
-
-                <a asp-controller="Donation"
-                   asp-action="Index"
-                   class="btn btn-outline-secondary">
-                    Go Back
-                </a>
-
-                <a asp-controller="Donation"
-                   asp-action="ThankYou"
-                   class="btn btn-donate-continue">
-                    Complete Donation
-                </a>
-
-            </div>
-
+            </form>
         </div>
 
     </div>
