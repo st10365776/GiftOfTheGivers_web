@@ -1,3 +1,4 @@
+// Set up the web application and its request pipeline.
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

@@ -1,3 +1,4 @@
+// Provides the pages used for account access and profile details.
 using Microsoft.AspNetCore.Mvc;
 
 namespace GiftOfTheGivers_web.Controllers;

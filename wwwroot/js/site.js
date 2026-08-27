@@ -1,4 +1,5 @@
-﻿const donationTypeButtons = document.querySelectorAll(".donation-type-btn");
+﻿/* Keeps the donation form controls and summary in sync. */
+const donationTypeButtons = document.querySelectorAll(".donation-type-btn");
 const currencyButtons = document.querySelectorAll(".currency-btn");
 const amountButtons = document.querySelectorAll(".amount-btn");
 
@@ -12,6 +13,27 @@ const customAmount = document.getElementById("customAmount");
 
 const summaryAmount = document.getElementById("summaryAmount");
 const summaryType = document.getElementById("summaryType");
+
+const currencySymbols = {
+    ZAR: "R",
+    USD: "$",
+    EUR: "€"
+};
+
+function getCurrencySymbol() {
+    return currencySymbols[donationCurrency ? donationCurrency.value : "ZAR"] || "R";
+}
+
+function updateAmountButtonLabels() {
+    const symbol = getCurrencySymbol();
+
+    amountButtons.forEach(button => {
+        if (button.dataset.amount) {
+            const amount = button.dataset.amount.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            button.textContent = symbol + amount;
+        }
+    });
+}
 
 
 if (donationTypeButtons.length > 0) {
@@ -57,6 +79,7 @@ if (currencyButtons.length > 0) {
                 donationCurrency.value = this.dataset.currency;
             }
 
+            updateAmountButtonLabels();
             updateDonationSummary();
 
         });
@@ -137,24 +160,23 @@ function updateDonationSummary() {
         return;
     }
 
-    const currency = donationCurrency
-        ? donationCurrency.value
-        : "ZAR";
-
     const amount = donationAmount
         ? donationAmount.value
         : "";
+    const symbol = getCurrencySymbol();
 
 
     if (!amount) {
 
-        summaryAmount.textContent = currency + " 0";
+        summaryAmount.textContent = symbol + "0";
 
         return;
     }
 
 
     summaryAmount.textContent =
-        currency + " " + Number(amount).toLocaleString();
+        symbol + Number(amount).toLocaleString();
 
 }
+
+updateAmountButtonLabels();

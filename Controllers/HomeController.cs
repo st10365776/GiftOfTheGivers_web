@@ -1,3 +1,4 @@
+// Provides the public-facing landing and information pages.
 using Microsoft.AspNetCore.Mvc;
 
 namespace GiftOfTheGivers_web.Controllers;

@@ -1,10 +1,540 @@
+@* Employee overview of donations, volunteers, and recent activity. *@
 @{
     ViewData["Title"] = "Employee Dashboard";
 }
 
-<div class="container py-5">
-    <h1>Employee Dashboard</h1>
-    <a asp-controller="Employee" asp-action="Donations">Manage donations</a>
-    <a asp-controller="Employee" asp-action="Volunteers">Manage volunteers</a>
-    <a asp-controller="Home" asp-action="Index">Public home page</a>
+<link rel="stylesheet" href="~/css/employee.css" asp-append-version="true" />
+
+<div class="employee-dashboard">
+
+    <aside class="employee-sidebar">
+
+        <div class="employee-sidebar-brand">
+            <img src="~/images/logo1.png" alt="Gift of the Givers" />
+        </div>
+
+        <nav class="employee-nav">
+
+            <a href="#" class="employee-nav-link active">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a asp-controller="Employee"
+               asp-action="Donations"
+               class="employee-nav-link">
+                Donations
+            </a>
+
+            <a href="#" class="employee-nav-link">
+                Volunteers
+            </a>
+
+            <a href="#" class="employee-nav-link">
+                Relief Operations
+            </a>
+
+            <a href="#" class="employee-nav-link">
+                Reports
+            </a>
+
+            <a href="#" class="employee-nav-link">
+                Settings
+            </a>
+
+        </nav>
+
+        <div class="employee-sidebar-bottom">
+
+            <a asp-controller="Home"
+               asp-action="Index"
+               class="employee-nav-link">
+                <span>←</span>
+                Back to Website
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <main class="employee-main">
+
+        <header class="employee-header">
+
+            <div>
+                <p class="employee-page-label">
+                    Employee Portal
+                </p>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p class="employee-welcome">
+                    Welcome back. Here's what's happening today.
+                </p>
+            </div>
+
+            <div class="employee-profile">
+
+                <div class="employee-avatar">
+                    E
+                </div>
+
+                <div>
+                    <strong>Employee</strong>
+                    <span>Administrator</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Statistics -->
+
+        <section class="employee-stats">
+
+            <div class="employee-stat-card">
+
+                <div class="stat-card-top">
+                    <span>Total Donations</span>
+                    <div class="stat-icon">R</div>
+                </div>
+
+                <h2>R1,248,500</h2>
+
+                <p class="stat-positive">
+                    ↑ 12.5% this month
+                </p>
+
+            </div>
+
+
+            <div class="employee-stat-card">
+
+                <div class="stat-card-top">
+                    <span>Donations</span>
+                    <div class="stat-icon">+</div>
+                </div>
+
+                <h2>1,842</h2>
+
+                <p class="stat-positive">
+                    ↑ 8.2% this month
+                </p>
+
+            </div>
+
+
+            <div class="employee-stat-card">
+
+                <div class="stat-card-top">
+                    <span>Volunteers</span>
+                    <div class="stat-icon">♧</div>
+                </div>
+
+                <h2>486</h2>
+
+                <p class="stat-positive">
+                    ↑ 5.4% this month
+                </p>
+
+            </div>
+
+
+            <div class="employee-stat-card">
+
+                <div class="stat-card-top">
+                    <span>Active Operations</span>
+                    <div class="stat-icon">●</div>
+                </div>
+
+                <h2>14</h2>
+
+                <p class="stat-warning">
+                    3 require attention
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Main Dashboard -->
+
+        <section class="employee-grid">
+
+            <div class="employee-panel donation-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Recent Donations</h2>
+                        <p>Latest contributions received</p>
+                    </div>
+
+                    <a href="#" class="panel-link">
+                        View All
+                    </a>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="employee-table">
+
+                        <thead>
+                            <tr>
+                                <th>Donor</th>
+                                <th>Amount</th>
+                                <th>Type</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <div class="donor">
+                                        <div class="donor-avatar">JD</div>
+                                        <span>John Daniels</span>
+                                    </div>
+                                </td>
+
+                                <td>R2,500</td>
+
+                                <td>Once-off</td>
+
+                                <td>27 Aug 2026</td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <div class="donor">
+                                        <div class="donor-avatar">SM</div>
+                                        <span>Sarah Mitchell</span>
+                                    </div>
+                                </td>
+
+                                <td>R1,000</td>
+
+                                <td>Monthly</td>
+
+                                <td>27 Aug 2026</td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <div class="donor">
+                                        <div class="donor-avatar">AN</div>
+                                        <span>Anonymous</span>
+                                    </div>
+                                </td>
+
+                                <td>R500</td>
+
+                                <td>Once-off</td>
+
+                                <td>26 Aug 2026</td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <div class="donor">
+                                        <div class="donor-avatar">MK</div>
+                                        <span>Michael Khan</span>
+                                    </div>
+                                </td>
+
+                                <td>R5,000</td>
+
+                                <td>Once-off</td>
+
+                                <td>26 Aug 2026</td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Pending
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- Operations -->
+
+            <div class="employee-panel operations-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Relief Operations</h2>
+                        <p>Current humanitarian operations</p>
+                    </div>
+
+                    <a href="#" class="panel-link">
+                        View All
+                    </a>
+
+                </div>
+
+
+                <div class="operation-list">
+
+                    <div class="operation">
+
+                        <div class="operation-icon">
+                            +
+                        </div>
+
+                        <div class="operation-info">
+
+                            <strong>
+                                Flood Relief
+                            </strong>
+
+                            <span>
+                                Eastern Cape
+                            </span>
+
+                        </div>
+
+                        <span class="operation-status active">
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <div class="operation">
+
+                        <div class="operation-icon">
+                            +
+                        </div>
+
+                        <div class="operation-info">
+
+                            <strong>
+                                Food Distribution
+                            </strong>
+
+                            <span>
+                                Gauteng
+                            </span>
+
+                        </div>
+
+                        <span class="operation-status active">
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <div class="operation">
+
+                        <div class="operation-icon">
+                            +
+                        </div>
+
+                        <div class="operation-info">
+
+                            <strong>
+                                Medical Support
+                            </strong>
+
+                            <span>
+                                KwaZulu-Natal
+                            </span>
+
+                        </div>
+
+                        <span class="operation-status planning">
+                            Planning
+                        </span>
+
+                    </div>
+
+
+                    <div class="operation">
+
+                        <div class="operation-icon">
+                            +
+                        </div>
+
+                        <div class="operation-info">
+
+                            <strong>
+                                Water Relief
+                            </strong>
+
+                            <span>
+                                Limpopo
+                            </span>
+
+                        </div>
+
+                        <span class="operation-status active">
+                            Active
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Bottom Section -->
+
+        <section class="employee-grid bottom-grid">
+
+            <div class="employee-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Volunteer Applications</h2>
+                        <p>Latest volunteer registrations</p>
+                    </div>
+
+                    <a href="#" class="panel-link">
+                        View All
+                    </a>
+
+                </div>
+
+
+                <div class="volunteer-list">
+
+                    <div class="volunteer">
+
+                        <div class="donor-avatar">
+                            TS
+                        </div>
+
+                        <div class="volunteer-info">
+                            <strong>Thomas Smith</strong>
+                            <span>Emergency Response</span>
+                        </div>
+
+                        <span class="status pending">
+                            Review
+                        </span>
+
+                    </div>
+
+
+                    <div class="volunteer">
+
+                        <div class="donor-avatar">
+                            LM
+                        </div>
+
+                        <div class="volunteer-info">
+                            <strong>Lisa Morgan</strong>
+                            <span>Food Distribution</span>
+                        </div>
+
+                        <span class="status completed">
+                            Approved
+                        </span>
+
+                    </div>
+
+
+                    <div class="volunteer">
+
+                        <div class="donor-avatar">
+                            DK
+                        </div>
+
+                        <div class="volunteer-info">
+                            <strong>David King</strong>
+                            <span>Medical Support</span>
+                        </div>
+
+                        <span class="status pending">
+                            Review
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="employee-panel quick-actions">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Quick Actions</h2>
+                        <p>Common employee tasks</p>
+                    </div>
+
+                </div>
+
+                <a href="#" class="quick-action">
+                    <span>+</span>
+                    Add Relief Operation
+                </a>
+
+                <a href="#" class="quick-action">
+                    <span>+</span>
+                    Review Volunteers
+                </a>
+
+                <a href="#" class="quick-action">
+                    <span>+</span>
+                    View Donations
+                </a>
+
+                <a href="#" class="quick-action">
+                    <span>+</span>
+                    Generate Report
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
 </div>

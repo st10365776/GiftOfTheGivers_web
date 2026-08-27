@@ -54,15 +54,15 @@ a {
 .gift-brand {
   display: flex;
   align-items: center;
-  padding: 6px 0;
+  padding: 4px 0;
 }
 
 .gift-logo {
   display: block;
-  width: auto;
-  height: 64px;
-  max-width: 78px;
+  width: 160px;
+  height: 110px;
   object-fit: contain;
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
 .gift-navbar .navbar-toggler {
@@ -252,7 +252,7 @@ a {
                   rgba(4, 59, 25, 0.72),
                   rgba(0, 0, 0, 0.2)
           ),
-          url("../images/hero.jpeg") center / cover no-repeat;
+          url("../images/hero-imagegog.jpg") center / cover no-repeat;
 }
 
 .hero::before {
@@ -826,8 +826,8 @@ a {
   }
 
   .gift-logo {
-    height: 56px;
-    max-width: 68px;
+    width: 96px;
+    height: 62px;
   }
 }
 
@@ -1395,3 +1395,4 @@ a {
     gap: 10px;
   }
 }
+/* Shared colours, layout rules, and reusable page components. */

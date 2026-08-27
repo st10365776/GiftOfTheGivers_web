@@ -1,0 +1,750 @@
+/* Employee dashboard shell and responsive layout. */
+.employee-dashboard {
+    min-height: 100vh;
+    display: flex;
+    background: #f5f8f6;
+    color: #17201a;
+}
+
+/* The sidebar stays dark so the employee tools remain easy to scan. */
+.employee-sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: #063b1b;
+    color: white;
+    padding: 25px 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Brand area at the top of the sidebar. */
+.employee-sidebar-brand {
+    padding: 10px 15px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Keep the logo from stretching on wider screens. */
+.employee-sidebar-brand img {
+    width: 145px;
+    height: auto;
+    display: block;
+}
+
+/* Navigation links sit below the brand area. */
+.employee-nav {
+    padding-top: 25px;
+}
+
+/* Sidebar links share the same spacing and hover treatment. */
+.employee-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 15px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+/* Small icon or initials area inside each navigation link. */
+.employee-nav-link span {
+    width: 20px;
+    text-align: center;
+    font-size: 17px;
+}
+
+/* Highlight the current page and hovered links. */
+.employee-nav-link:hover,
+.employee-nav-link.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Pin the account actions to the bottom of the sidebar. */
+.employee-sidebar-bottom {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+/* Main content area beside the sidebar. */
+.employee-main {
+    flex: 1;
+    padding: 35px 45px;
+    overflow-x: hidden;
+}
+
+/* Page title and employee profile sit on one line. */
+.employee-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+/* Small uppercase label above the page title. */
+.employee-page-label {
+    color: #16803c;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+}
+
+/* Main page heading. */
+.employee-header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+/* Supporting text below the heading. */
+.employee-welcome {
+    color: #69736c;
+    margin: 5px 0 0;
+}
+
+/* Employee profile shown in the header. */
+.employee-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Stack the profile name and role. */
+.employee-profile strong,
+.employee-profile span {
+    display: block;
+}
+
+.employee-profile span {
+    color: #69736c;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+/* Shared circular treatment for employee and donor initials. */
+.employee-avatar,
+.donor-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #eaf6ee;
+    color: #16803c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+/* Four headline figures across the top of the dashboard. */
+.employee-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+/* Individual statistic card. */
+.employee-stat-card {
+    background: white;
+    border: 1px solid #e1e7e3;
+    border-radius: 15px;
+    padding: 22px;
+}
+
+/* Label and icon row inside a statistic card. */
+.stat-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #69736c;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Small icon used by each statistic. */
+.stat-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 9px;
+    background: #eaf6ee;
+    color: #16803c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+/* Large number displayed in a statistic card. */
+.employee-stat-card h2 {
+    margin: 18px 0 8px;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+/* Supporting status text for positive statistics. */
+.stat-positive {
+    color: #16803c;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* Supporting status text for warnings. */
+.stat-warning {
+    color: #b7791f;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* Main content columns below the headline figures. */
+.employee-grid {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+/* Reusable white panel used for tables and activity lists. */
+.employee-panel {
+    background: white;
+    border: 1px solid #e1e7e3;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+/* Panel title and action link. */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 22px;
+}
+
+/* Panel heading. */
+.panel-header h2 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* Panel description. */
+.panel-header p {
+    margin: 0;
+    color: #69736c;
+    font-size: 12px;
+}
+
+/* Link to the full panel view. */
+.panel-link {
+    color: #16803c;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Allow wide tables to scroll instead of breaking the page. */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+/* Donation and volunteer table styling. */
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+/* Table headings use a compact, uppercase style. */
+.employee-table th {
+    text-align: left;
+    padding: 12px 10px;
+    color: #69736c;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e6ebe8;
+}
+
+/* Keep table rows readable without heavy borders. */
+.employee-table td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #edf0ee;
+}
+
+/* Donor name and avatar share one row. */
+.donor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+/* Smaller avatar used in table rows. */
+.donor-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 10px;
+}
+
+/* Shared pill shape for status labels. */
+.status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* Completed items use the dashboard green. */
+.status.completed {
+    background: #eaf6ee;
+    color: #16803c;
+}
+
+/* Pending items use a warm warning colour. */
+.status.pending {
+    background: #fff7e6;
+    color: #a66b00;
+}
+
+/* Individual operational updates in the activity list. */
+.operation {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid #edf0ee;
+}
+
+/* The final activity item does not need a divider. */
+.operation:last-child {
+    border-bottom: none;
+}
+
+/* Icon beside each operational update. */
+.operation-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #eaf6ee;
+    color: #16803c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+/* Let the operation details use the available space. */
+.operation-info {
+    flex: 1;
+}
+
+/* Keep operation title and metadata on separate lines. */
+.operation-info strong,
+.operation-info span {
+    display: block;
+}
+
+/* Operation title. */
+.operation-info strong {
+    font-size: 13px;
+}
+
+/* Operation metadata. */
+.operation-info span {
+    color: #69736c;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+/* Status pill used by operational updates. */
+.operation-status {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 5px 9px;
+    border-radius: 20px;
+}
+
+/* Active operations use the positive status colour. */
+.operation-status.active {
+    background: #eaf6ee;
+    color: #16803c;
+}
+
+/* Planned operations are intentionally muted. */
+.operation-status.planning {
+    background: #f0f1f2;
+    color: #69736c;
+}
+
+/* Match the lower row to the main dashboard columns. */
+.bottom-grid {
+    grid-template-columns: 1.7fr 1fr;
+}
+
+/* Individual volunteer entry in the lower panel. */
+.volunteer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid #edf0ee;
+}
+
+/* Remove the divider from the last volunteer entry. */
+.volunteer:last-child {
+    border-bottom: none;
+}
+
+/* Let volunteer details fill the row. */
+.volunteer-info {
+    flex: 1;
+}
+
+/* Keep volunteer name and metadata on separate lines. */
+.volunteer-info strong,
+.volunteer-info span {
+    display: block;
+}
+
+/* Volunteer name. */
+.volunteer-info strong {
+    font-size: 13px;
+}
+
+/* Volunteer metadata. */
+.volunteer-info span {
+    color: #69736c;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+/* Quick links for common employee tasks. */
+.quick-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px;
+    margin-bottom: 8px;
+    border: 1px solid #e1e7e3;
+    border-radius: 9px;
+    color: #17201a;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+/* Icon or initials inside a quick action. */
+.quick-action span {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    background: #eaf6ee;
+    color: #16803c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+/* Give quick actions a subtle movement and colour change on hover. */
+.quick-action:hover {
+    border-color: #16803c;
+    color: #16803c;
+    transform: translateX(3px);
+}
+
+/* Tablet layout: narrow the sidebar and stack the main panels. */
+@media (max-width: 1100px) {
+
+    /* Make room for the content at tablet widths. */
+    .employee-sidebar {
+        width: 210px;
+    }
+
+    /* Reduce page padding while keeping the content comfortable. */
+    .employee-main {
+        padding: 30px;
+    }
+
+    /* Two rows keep the statistic cards readable. */
+    .employee-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Stack the main panels vertically. */
+    .employee-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile layout: hide the sidebar and simplify the header. */
+@media (max-width: 768px) {
+
+    /* Navigation is replaced by the mobile page flow. */
+    .employee-sidebar {
+        display: none;
+    }
+
+    /* Use smaller side padding on phones. */
+    .employee-main {
+        padding: 25px 18px;
+    }
+
+    /* Keep the title aligned to the top of the header. */
+    .employee-header {
+        align-items: flex-start;
+    }
+
+    /* The profile is omitted when horizontal space is limited. */
+    .employee-profile {
+        display: none;
+    }
+
+    /* Keep two compact statistic cards per row. */
+    .employee-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    /* Tighten card padding on smaller screens. */
+    .employee-stat-card {
+        padding: 17px;
+    }
+}
+
+/* Small phones: stack statistics and tighten panel spacing. */
+@media (max-width: 500px) {
+
+    /* One statistic per row prevents cramped text. */
+    .employee-stats {
+        grid-template-columns: 1fr;
+    }
+
+    /* Scale down the page title. */
+    .employee-header h1 {
+        font-size: 26px;
+    }
+
+    /* Give panels more usable width on narrow screens. */
+    .employee-panel {
+        padding: 18px;
+    }
+}
+
+.employee-page {
+    min-height: 100vh;
+    background: #f5f8f6;
+    padding-top: 30px;
+}
+
+.employee-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.employee-label {
+    display: inline-block;
+    color: #16803c;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.employee-header h1 {
+    margin: 0 0 10px;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #17201a;
+}
+
+.employee-header p {
+    margin: 0;
+    color: #69736c;
+}
+
+.employee-back-button {
+    padding: 11px 20px;
+    border: 1px solid #d9e2dc;
+    border-radius: 10px;
+    color: #303832;
+    background: white;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.employee-back-button:hover {
+    color: #16803c;
+    border-color: #16803c;
+}
+
+.donation-management-card {
+    background: white;
+    border: 1px solid #e2e8e4;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+}
+
+.management-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 30px;
+    border-bottom: 1px solid #e8ede9;
+}
+
+.management-header h2 {
+    margin: 0 0 5px;
+    font-size: 1.35rem;
+    font-weight: 750;
+}
+
+.management-header p {
+    margin: 0;
+    color: #69736c;
+    font-size: 0.9rem;
+}
+
+.donation-count {
+    background: #eaf6ee;
+    color: #16803c;
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.employee-table th {
+    padding: 16px 20px;
+    background: #f8faf9;
+    color: #69736c;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    text-align: left;
+}
+
+.employee-table td {
+    padding: 18px 20px;
+    border-top: 1px solid #edf1ee;
+    color: #303832;
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.employee-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.employee-table tbody tr:hover {
+    background: #f8fbf9;
+}
+
+.donor-email {
+    display: block;
+    margin-top: 4px;
+    color: #8a948d;
+    font-size: 0.75rem;
+}
+
+.donation-status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.donation-status.completed {
+    background: #e8f7ed;
+    color: #16803c;
+}
+
+.donation-status.pending {
+    background: #fff6dc;
+    color: #9a7000;
+}
+
+.donation-status.cancelled {
+    background: #fdeaea;
+    color: #b52b2b;
+}
+
+.view-donation {
+    color: #16803c;
+    font-weight: 700;
+}
+
+.view-donation:hover {
+    color: #0b5d2a;
+    text-decoration: underline;
+}
+
+.employee-navigation {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.employee-navigation a {
+    padding: 10px 16px;
+    background: white;
+    border: 1px solid #dfe6e1;
+    border-radius: 9px;
+    color: #303832;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.employee-navigation a:hover {
+    border-color: #16803c;
+    color: #16803c;
+}
+
+@media (max-width: 767px) {
+
+    .employee-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .employee-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .management-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .employee-table {
+        min-width: 900px;
+    }
+
+    .employee-navigation {
+        flex-direction: column;
+    }
+
+    .employee-navigation a {
+        text-align: center;
+    }
+}

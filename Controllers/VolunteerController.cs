@@ -1,3 +1,4 @@
+// Handles the volunteer application and confirmation pages.
 using Microsoft.AspNetCore.Mvc;
 
 namespace GiftOfTheGivers_web.Controllers;

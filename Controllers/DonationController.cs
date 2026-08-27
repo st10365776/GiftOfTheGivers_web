@@ -1,3 +1,4 @@
+// Handles the donation form, review step, and completion flow.
 using Microsoft.AspNetCore.Mvc;
 using GiftOfTheGivers_web.Models;
 

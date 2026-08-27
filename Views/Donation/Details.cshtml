@@ -1,3 +1,4 @@
+@* Review page shown before a donation is completed. *@
 @model GiftOfTheGivers_web.Models.DonationViewModel
 
 @{
@@ -24,6 +25,7 @@
                   method="post">
 
                 <input type="hidden" asp-for="DonationType" />
+                <input type="hidden" asp-for="Currency" />
                 <input type="hidden" asp-for="Amount" />
                 <input type="hidden" asp-for="PaymentMethod" />
                 <input type="hidden" asp-for="IsAnonymous" />
@@ -37,7 +39,14 @@
 
                     <div class="summary-row">
                         <span>Amount</span>
-                        <strong>R @Model.Amount.ToString("N2")</strong>
+                        <strong>
+                            @(Model.Currency switch
+                            {
+                                "USD" => "$",
+                                "EUR" => "€",
+                                _ => "R"
+                            }) @Model.Amount.ToString("N2") @Model.Currency
+                        </strong>
                     </div>
 
                     <div class="summary-row">
