@@ -1,12 +1,285 @@
-@* Volunteer landing page with programme information and next steps. *@
 @{
-    ViewData["Title"] = "Volunteering";
+    ViewData["Title"] = "Volunteer";
 }
 
-<div class="container py-5">
-    <h1>Volunteering</h1>
-    <a asp-controller="Volunteer" asp-action="Apply">Apply to volunteer</a>
-    <a asp-controller="Volunteer" asp-action="Details">Volunteer details</a>
-    <a asp-controller="Home" asp-action="About">About us</a>
-    <a asp-controller="Home" asp-action="Contact">Contact us</a>
-</div>
+<link rel="stylesheet" href="~/css/volunteer.css" />
+
+<!-- HERO -->
+<section class="volunteer-hero">
+
+    <div class="volunteer-hero-overlay"></div>
+
+    <div class="volunteer-hero-content">
+
+        <div class="volunteer-badge">
+            <i class="bi bi-people-fill"></i>
+            Make a Difference
+        </div>
+
+        <h1>
+            Give Your Time.
+            <span>Change a Life.</span>
+        </h1>
+
+        <p>
+            Join our volunteer community and help us support
+            people and communities affected by disasters and
+            difficult situations.
+        </p>
+
+        <div class="volunteer-hero-buttons">
+
+            <a asp-controller="Volunteer"
+               asp-action="Apply"
+               class="volunteer-primary-btn">
+
+                <i class="bi bi-person-plus-fill"></i>
+                Become a Volunteer
+
+            </a>
+
+            <a asp-controller="Volunteer"
+               asp-action="Details"
+               class="volunteer-secondary-btn">
+
+                Learn More
+                <i class="bi bi-arrow-down"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY VOLUNTEER -->
+<section class="volunteer-intro">
+
+    <div class="volunteer-heading reveal">
+
+        <span class="section-label">
+            WHY VOLUNTEER?
+        </span>
+
+        <h2>
+            Your Time Can Make
+            a Real Difference
+        </h2>
+
+        <p>
+            Volunteering gives you the opportunity to support
+            people, learn new skills and become part of something
+            bigger than yourself.
+        </p>
+
+    </div>
+
+
+    <div class="volunteer-benefits">
+
+        <div class="benefit-card reveal">
+
+            <div class="benefit-icon">
+                <i class="bi bi-heart-fill"></i>
+            </div>
+
+            <h3>Help People</h3>
+
+            <p>
+                Support communities that need help during
+                difficult times and emergencies.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card reveal">
+
+            <div class="benefit-icon">
+                <i class="bi bi-lightbulb-fill"></i>
+            </div>
+
+            <h3>Build Skills</h3>
+
+            <p>
+                Gain valuable experience while working with
+                people and different communities.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card reveal">
+
+            <div class="benefit-icon">
+                <i class="bi bi-people-fill"></i>
+            </div>
+
+            <h3>Join a Community</h3>
+
+            <p>
+                Meet people who share your passion for helping
+                others and making a difference.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section class="volunteer-process">
+
+    <div class="volunteer-heading reveal">
+
+        <span class="section-label">
+            HOW IT WORKS
+        </span>
+
+        <h2>
+            Becoming a Volunteer
+            Is Easy
+        </h2>
+
+    </div>
+
+
+    <div class="process-steps">
+
+        <div class="process-step reveal">
+
+            <div class="process-number">
+                01
+            </div>
+
+            <div class="process-icon">
+                <i class="bi bi-person-plus-fill"></i>
+            </div>
+
+            <h3>Apply</h3>
+
+            <p>
+                Complete the volunteer application form
+                with your details.
+            </p>
+
+        </div>
+
+
+        <div class="process-line"></div>
+
+
+        <div class="process-step reveal">
+
+            <div class="process-number">
+                02
+            </div>
+
+            <div class="process-icon">
+                <i class="bi bi-clipboard-check-fill"></i>
+            </div>
+
+            <h3>Review</h3>
+
+            <p>
+                Our team reviews your application and
+                volunteer information.
+            </p>
+
+        </div>
+
+
+        <div class="process-line"></div>
+
+
+        <div class="process-step reveal">
+
+            <div class="process-number">
+                03
+            </div>
+
+            <div class="process-icon">
+                <i class="bi bi-people-fill"></i>
+            </div>
+
+            <h3>Get Involved</h3>
+
+            <p>
+                Once approved, you can start supporting
+                our programmes and communities.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="volunteer-cta reveal">
+
+    <div class="volunteer-cta-icon">
+        <i class="bi bi-heart-fill"></i>
+    </div>
+
+    <span class="section-label">
+        READY TO HELP?
+    </span>
+
+    <h2>
+        Be Part of the Change
+    </h2>
+
+    <p>
+        Every helping hand matters. Take the first step
+        and become a volunteer today.
+    </p>
+
+    <a asp-controller="Volunteer"
+       asp-action="Apply"
+       class="volunteer-primary-btn">
+
+        <i class="bi bi-person-plus-fill"></i>
+        Apply Now
+
+    </a>
+
+</section>
+
+
+<script>
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("active");
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    revealElements.forEach(element => {
+        observer.observe(element);
+    });
+
+</script>
