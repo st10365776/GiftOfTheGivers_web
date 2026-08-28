@@ -1,14 +1,677 @@
-@* Contact details and the main donation call to action. *@
 @{
-    ViewData["Title"] = "Contact";
+    ViewData["Title"] = "Contact Us";
 }
 
-<section class="section">
-    <div class="container">
-        <h1>Contact Us</h1>
-        <p>We would love to hear from you and help you get involved.</p>
-        <a class="btn btn-primary-gift" asp-controller="Home" asp-action="About">About Us</a>
-        <a class="btn btn-primary-gift" asp-controller="Donation" asp-action="Index">Donate</a>
-        <a class="btn btn-primary-gift" asp-controller="Volunteer" asp-action="Index">Volunteer</a>
+<link rel="stylesheet" href="~/css/contact.css" />
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="contact-hero">
+
+    <div class="contact-hero-overlay"></div>
+
+    <div class="contact-hero-content">
+
+        <div class="contact-badge">
+            <i class="bi bi-chat-heart-fill"></i>
+            We're Here to Help
+        </div>
+
+        <h1>
+            Let's Start a
+            <span>Conversation.</span>
+        </h1>
+
+        <p>
+            Have a question, need assistance, or want to get
+            involved? Our team is here to listen and help.
+        </p>
+
+        <a href="#contact-form" class="hero-contact-btn">
+            Get in Touch
+            <i class="bi bi-arrow-down"></i>
+        </a>
+
     </div>
+
+    <div class="contact-scroll">
+        <i class="bi bi-mouse"></i>
+        Scroll to contact us
+    </div>
+
 </section>
+
+
+<!-- =========================================
+     CONTACT INFORMATION
+========================================= -->
+
+<section class="contact-info-section">
+
+    <div class="section-heading reveal">
+
+        <span class="section-label">
+            GET IN TOUCH
+        </span>
+
+        <h2>
+            We're Always Happy
+            to Hear From You
+        </h2>
+
+        <p>
+            Choose the best way to reach us and our team
+            will assist you.
+        </p>
+
+    </div>
+
+
+    <div class="contact-cards">
+
+        <!-- PHONE -->
+
+        <div class="contact-card reveal">
+
+            <div class="contact-card-icon">
+                <i class="bi bi-telephone-fill"></i>
+            </div>
+
+            <div>
+
+                <span class="contact-card-label">
+                    CALL US
+                </span>
+
+                <h3>Phone</h3>
+
+                <p>
+                    Speak directly with our team.
+                </p>
+
+                <a href="tel:+27416000000">
+                    +27 41 600 0000
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="contact-card reveal">
+
+            <div class="contact-card-icon">
+                <i class="bi bi-envelope-fill"></i>
+            </div>
+
+            <div>
+
+                <span class="contact-card-label">
+                    EMAIL US
+                </span>
+
+                <h3>Email</h3>
+
+                <p>
+                    Send us your questions or requests.
+                </p>
+
+                <a href="mailto:info@giftofthegivers.org">
+                    info@giftofthegivers.org
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOCATION -->
+
+        <div class="contact-card reveal">
+
+            <div class="contact-card-icon">
+                <i class="bi bi-geo-alt-fill"></i>
+            </div>
+
+            <div>
+
+                <span class="contact-card-label">
+                    VISIT US
+                </span>
+
+                <h3>Our Location</h3>
+
+                <p>
+                    Gift of the Givers offices
+                    in South Africa.
+                </p>
+
+                <a href="#location">
+                    View location
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CONTACT FORM
+========================================= -->
+
+<section class="contact-form-section" id="contact-form">
+
+    <div class="contact-form-wrapper">
+
+
+        <!-- LEFT -->
+
+        <div class="form-introduction reveal">
+
+            <span class="section-label">
+                SEND A MESSAGE
+            </span>
+
+            <h2>
+                How Can
+                We Help?
+            </h2>
+
+            <p>
+                Fill in the form and tell us what you need.
+                Our team will review your message and get
+                back to you.
+            </p>
+
+
+            <div class="form-help">
+
+                <div class="help-icon">
+                    <i class="bi bi-clock-fill"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        We're listening
+                    </strong>
+
+                    <span>
+                        Your message matters to us.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-help">
+
+                <div class="help-icon">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Your information is safe
+                    </strong>
+
+                    <span>
+                        We respect your privacy.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT FORM -->
+
+        <div class="contact-form-card reveal">
+
+            <form>
+
+                <!-- NAME -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="firstName">
+                            First Name
+                        </label>
+
+                        <div class="contact-input">
+
+                            <i class="bi bi-person"></i>
+
+                            <input type="text"
+                                   id="firstName"
+                                   placeholder="Your first name"
+                                   required />
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="lastName">
+                            Last Name
+                        </label>
+
+                        <div class="contact-input">
+
+                            <i class="bi bi-person"></i>
+
+                            <input type="text"
+                                   id="lastName"
+                                   placeholder="Your last name"
+                                   required />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="contactEmail">
+                        Email Address
+                    </label>
+
+                    <div class="contact-input">
+
+                        <i class="bi bi-envelope"></i>
+
+                        <input type="email"
+                               id="contactEmail"
+                               placeholder="you@example.com"
+                               required />
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="form-group">
+
+                    <label for="contactPhone">
+                        Phone Number
+                    </label>
+
+                    <div class="contact-input">
+
+                        <i class="bi bi-telephone"></i>
+
+                        <input type="tel"
+                               id="contactPhone"
+                               placeholder="+27 ..."
+                               required />
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUBJECT -->
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        What can we help you with?
+                    </label>
+
+                    <div class="contact-input">
+
+                        <i class="bi bi-chat-left-text"></i>
+
+                        <select id="subject" required>
+
+                            <option value="" disabled selected>
+                                Select a topic
+                            </option>
+
+                            <option>
+                                General Enquiry
+                            </option>
+
+                            <option>
+                                Volunteer
+                            </option>
+
+                            <option>
+                                Donation
+                            </option>
+
+                            <option>
+                                Disaster Relief
+                            </option>
+
+                            <option>
+                                Partnership
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Your Message
+                    </label>
+
+                    <div class="textarea-wrapper">
+
+                        <i class="bi bi-pencil"></i>
+
+                        <textarea id="message"
+                                  rows="5"
+                                  placeholder="Tell us how we can help..."
+                                  required></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CHECKBOX -->
+
+                <label class="contact-consent">
+
+                    <input type="checkbox" required />
+
+                    <span>
+                        I agree that my information may be
+                        used to respond to my enquiry.
+                    </span>
+
+                </label>
+
+
+                <!-- BUTTON -->
+
+                <button type="submit"
+                        class="send-message-btn">
+
+                    <span>
+                        Send Message
+                    </span>
+
+                    <i class="bi bi-send-fill"></i>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     LOCATION
+========================================= -->
+
+<section class="location-section" id="location">
+
+    <div class="location-content reveal">
+
+        <span class="section-label">
+            FIND US
+        </span>
+
+        <h2>
+            We're Here When
+            You Need Us
+        </h2>
+
+        <p>
+            Our organisation operates across South Africa
+            and responds to communities affected by
+            disasters and difficult situations.
+        </p>
+
+
+        <div class="location-details">
+
+            <div class="location-detail">
+
+                <i class="bi bi-geo-alt-fill"></i>
+
+                <div>
+
+                    <strong>
+                        South Africa
+                    </strong>
+
+                    <span>
+                        Humanitarian operations
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="location-detail">
+
+                <i class="bi bi-envelope-fill"></i>
+
+                <div>
+
+                    <strong>
+                        info@giftofthegivers.org
+                    </strong>
+
+                    <span>
+                        General enquiries
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="map-placeholder reveal">
+
+        <div class="map-content">
+
+            <div class="map-pin">
+                <i class="bi bi-geo-alt-fill"></i>
+            </div>
+
+            <h3>
+                Gift of the Givers
+            </h3>
+
+            <p>
+                South Africa
+            </p>
+
+            <a href="#" class="map-btn">
+                <i class="bi bi-map"></i>
+                View on Map
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+
+<section class="contact-cta reveal">
+
+    <div class="contact-cta-icon">
+        <i class="bi bi-heart-fill"></i>
+    </div>
+
+    <span class="section-label">
+        GET INVOLVED
+    </span>
+
+    <h2>
+        Want to Make
+        a Difference?
+    </h2>
+
+    <p>
+        You can help communities in need by volunteering,
+        donating or becoming part of our community.
+    </p>
+
+
+    <div class="contact-cta-buttons">
+
+        <a asp-controller="Volunteer"
+           asp-action="Index"
+           class="cta-primary">
+
+            <i class="bi bi-people-fill"></i>
+            Volunteer
+
+        </a>
+
+
+        <a asp-controller="Donation"
+           asp-action="Index"
+           class="cta-secondary">
+
+            <i class="bi bi-heart-fill"></i>
+            Donate
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<script>
+
+    /* =========================================
+       SCROLL REVEAL
+    ========================================= */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("active");
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    revealElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+    /* =========================================
+       FORM FEEDBACK
+    ========================================= */
+
+    const contactForm =
+        document.querySelector(".contact-form-card form");
+
+
+    if (contactForm) {
+
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                const button =
+                    contactForm.querySelector(
+                        ".send-message-btn"
+                    );
+
+                const originalText =
+                    button.innerHTML;
+
+                button.innerHTML =
+                    '<i class="bi bi-check-circle-fill"></i> Message Sent!';
+
+                button.classList.add("success");
+
+                setTimeout(() => {
+
+                    button.innerHTML =
+                        originalText;
+
+                    button.classList.remove(
+                        "success"
+                    );
+
+                    contactForm.reset();
+
+                }, 3000);
+
+            }
+        );
+
+    }
+
+</script>
