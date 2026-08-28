@@ -1,12 +1,264 @@
-@* Profile overview and account actions. *@
 @{
-    ViewData["Title"] = "Profile";
+    ViewData["Title"] = "My Profile";
 }
 
-<div class="container py-5">
-    <h1>Profile</h1>
-    <a asp-controller="Account" asp-action="Login">Login</a>
-    <a asp-controller="Account" asp-action="Register">Register</a>
-    <a asp-controller="Donation" asp-action="Index">Make a donation</a>
-    <a asp-controller="Volunteer" asp-action="Index">Volunteer</a>
-</div>
+<section class="profile-page">
+
+    <div class="container">
+
+        <div class="profile-header">
+            <span class="hero-label">Account</span>
+
+            <h1>My Profile</h1>
+
+            <p>
+                Manage your account information, donations and
+                volunteer activity.
+            </p>
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Profile Information -->
+            <div class="col-lg-4">
+
+                <div class="profile-card profile-user-card">
+
+                    <div class="profile-avatar">
+                        MM
+                    </div>
+
+                    <h2>Mark Moss</h2>
+
+                    <p class="profile-email">
+                        markmoss@gmail.com
+                    </p>
+
+                    <span class="profile-status">
+                        Active Account
+                    </span>
+
+                    <button class="profile-edit-btn">
+                        Edit Profile
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Account Details -->
+            <div class="col-lg-8">
+
+                <div class="profile-card">
+
+                    <div class="profile-card-header">
+                        <div>
+                            <span class="profile-section-label">
+                                Personal Information
+                            </span>
+
+                            <h2>Account Details</h2>
+                        </div>
+                    </div>
+
+
+                    <div class="profile-details">
+
+                        <div class="profile-detail">
+                            <span>Name</span>
+                            <strong>Mark Moss</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Email</span>
+                            <strong>markmoss@gmail.com</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Phone</span>
+                            <strong>+27 00 000 0000</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Member Since</span>
+                            <strong>2026</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Account Activity -->
+
+        <div class="profile-card activity-card">
+
+            <div class="profile-card-header">
+
+                <div>
+                    <span class="profile-section-label">
+                        Your Activity
+                    </span>
+
+                    <h2>Account Overview</h2>
+                </div>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="profile-stat">
+
+                        <div class="profile-stat-number">
+                            3
+                        </div>
+
+                        <div class="profile-stat-label">
+                            Donations Made
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="profile-stat">
+
+                        <div class="profile-stat-number">
+                            R2 500
+                        </div>
+
+                        <div class="profile-stat-label">
+                            Total Donated
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="profile-stat">
+
+                        <div class="profile-stat-number">
+                            1
+                        </div>
+
+                        <div class="profile-stat-label">
+                            Volunteer Application
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Profile Actions -->
+
+        <div class="profile-card">
+
+            <div class="profile-card-header">
+
+                <div>
+                    <span class="profile-section-label">
+                        Account Management
+                    </span>
+
+                    <h2>Quick Actions</h2>
+                </div>
+
+            </div>
+
+
+            <div class="profile-actions">
+
+                <a asp-controller="Donation"
+                   asp-action="History"
+                   class="profile-action">
+
+                    <div>
+                        <strong>Donation History</strong>
+
+                        <span>
+                            View your previous donations
+                        </span>
+                    </div>
+
+                    <span class="profile-arrow">→</span>
+
+                </a>
+
+
+                <a asp-controller="Donation"
+                   asp-action="Index"
+                   class="profile-action">
+
+                    <div>
+                        <strong>Make a Donation</strong>
+
+                        <span>
+                            Support humanitarian relief
+                        </span>
+                    </div>
+
+                    <span class="profile-arrow">→</span>
+
+                </a>
+
+
+                <a asp-controller="Volunteer"
+                   asp-action="Index"
+                   class="profile-action">
+
+                    <div>
+                        <strong>Volunteer</strong>
+
+                        <span>
+                            Get involved and help communities
+                        </span>
+                    </div>
+
+                    <span class="profile-arrow">→</span>
+
+                </a>
+
+
+                <a asp-controller="Account"
+                   asp-action="Login"
+                   class="profile-action profile-logout">
+
+                    <div>
+                        <strong>Log Out</strong>
+
+                        <span>
+                            Sign out of your account
+                        </span>
+                    </div>
+
+                    <span class="profile-arrow">→</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
