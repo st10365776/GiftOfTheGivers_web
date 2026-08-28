@@ -1,11 +1,235 @@
-@* Review page for a volunteer application. *@
 @{
     ViewData["Title"] = "Confirm Application";
 }
 
-<div class="container py-5">
-    <h1>Confirm Application</h1>
-    <a asp-controller="Volunteer" asp-action="Details">View volunteer details</a>
-    <a asp-controller="Volunteer" asp-action="Index">Back to volunteering</a>
-    <a asp-controller="Home" asp-action="Index">Return home</a>
+<link rel="stylesheet" href="~/css/volunteer.css" />
+
+<section class="confirm-page">
+
+    <div class="confirm-icon">
+
+        <i class="bi bi-clipboard-check-fill"></i>
+
+    </div>
+
+    <span class="section-label">
+        FINAL STEP
+    </span>
+
+    <h1>
+        Review Your
+        <span>Application</span>
+    </h1>
+
+    <p class="confirm-intro">
+        Please check your information before submitting
+        your volunteer application.
+    </p>
+
+
+    <!-- REVIEW CARD -->
+
+    <div class="review-card">
+
+        <div class="review-header">
+
+            <div>
+
+                <i class="bi bi-person-check-fill"></i>
+
+                <div>
+
+                    <h2>Application Details</h2>
+
+                    <span>
+                        Volunteer application
+                    </span>
+
+                </div>
+
+            </div>
+
+            <span class="review-status">
+                Ready
+            </span>
+
+        </div>
+
+
+        <div class="review-row">
+
+            <div class="review-item">
+
+                <span>First Name</span>
+
+                <strong>
+                    Your first name
+                </strong>
+
+            </div>
+
+            <div class="review-item">
+
+                <span>Last Name</span>
+
+                <strong>
+                    Your last name
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="review-row">
+
+            <div class="review-item">
+
+                <span>Email</span>
+
+                <strong>
+                    your@email.com
+                </strong>
+
+            </div>
+
+            <div class="review-item">
+
+                <span>Phone</span>
+
+                <strong>
+                    +27 ...
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="review-row">
+
+            <div class="review-item">
+
+                <span>Area of Interest</span>
+
+                <strong>
+                    Your selected area
+                </strong>
+
+            </div>
+
+            <div class="review-item">
+
+                <span>Availability</span>
+
+                <strong>
+                    Your availability
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="review-message">
+
+            <span>
+                About You
+            </span>
+
+            <p>
+                Your volunteer information will appear here
+                when the application is connected to the system.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ACTIONS -->
+
+    <div class="confirm-actions">
+
+        <a asp-controller="Volunteer"
+           asp-action="Apply"
+           class="back-btn">
+
+            <i class="bi bi-pencil"></i>
+            Edit Application
+
+        </a>
+
+
+        <button type="button"
+                class="submit-application-btn"
+                onclick="submitApplication()">
+
+            <i class="bi bi-check-circle-fill"></i>
+
+            Submit Application
+
+        </button>
+
+    </div>
+
+
+    <a asp-controller="Volunteer"
+       asp-action="Index"
+       class="return-volunteer">
+
+        <i class="bi bi-arrow-left"></i>
+        Back to volunteering
+
+    </a>
+
+</section>
+
+
+<!-- SUCCESS MESSAGE -->
+
+<div class="success-modal" id="successModal">
+
+    <div class="success-modal-card">
+
+        <div class="success-animation">
+
+            <i class="bi bi-check-lg"></i>
+
+        </div>
+
+        <h2>
+            Application Submitted!
+        </h2>
+
+        <p>
+            Thank you for wanting to make a difference.
+            Your volunteer application has been received.
+        </p>
+
+        <a asp-controller="Volunteer"
+           asp-action="Index"
+           class="volunteer-primary-btn">
+
+            Back to Volunteering
+            <i class="bi bi-arrow-right"></i>
+
+        </a>
+
+    </div>
+
 </div>
+
+
+<script>
+
+    function submitApplication() {
+
+        const modal =
+            document.getElementById("successModal");
+
+        modal.classList.add("show");
+
+    }
+
+</script>
