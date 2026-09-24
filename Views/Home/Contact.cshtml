@@ -1,3 +1,5 @@
+@model GiftOfTheGivers_web.Models.ViewModels.ContactMessageViewModel
+
 @{
     ViewData["Title"] = "Contact Us";
 }
@@ -244,7 +246,21 @@
 
         <div class="contact-form-card reveal">
 
-            <form>
+            @if (TempData["ContactMessage"] != null)
+            {
+                <div class="alert alert-success mb-3">
+                    @TempData["ContactMessage"]
+                </div>
+            }
+
+            <form asp-action="Contact"
+                  method="post">
+
+                @Html.AntiForgeryToken()
+
+                <div asp-validation-summary="All"
+                     class="text-danger mb-3">
+                </div>
 
                 <!-- NAME -->
 
@@ -252,7 +268,7 @@
 
                     <div class="form-group">
 
-                        <label for="firstName">
+                        <label asp-for="FirstName">
                             First Name
                         </label>
 
@@ -260,19 +276,22 @@
 
                             <i class="bi bi-person"></i>
 
-                            <input type="text"
-                                   id="firstName"
+                            <input asp-for="FirstName"
                                    placeholder="Your first name"
                                    required />
 
                         </div>
+
+                        <span asp-validation-for="FirstName"
+                              class="text-danger">
+                        </span>
 
                     </div>
 
 
                     <div class="form-group">
 
-                        <label for="lastName">
+                        <label asp-for="LastName">
                             Last Name
                         </label>
 
@@ -280,12 +299,15 @@
 
                             <i class="bi bi-person"></i>
 
-                            <input type="text"
-                                   id="lastName"
+                            <input asp-for="LastName"
                                    placeholder="Your last name"
                                    required />
 
                         </div>
+
+                        <span asp-validation-for="LastName"
+                              class="text-danger">
+                        </span>
 
                     </div>
 
@@ -296,7 +318,7 @@
 
                 <div class="form-group">
 
-                    <label for="contactEmail">
+                    <label asp-for="Email">
                         Email Address
                     </label>
 
@@ -304,12 +326,15 @@
 
                         <i class="bi bi-envelope"></i>
 
-                        <input type="email"
-                               id="contactEmail"
+                        <input asp-for="Email"
                                placeholder="you@example.com"
                                required />
 
                     </div>
+
+                    <span asp-validation-for="Email"
+                          class="text-danger">
+                    </span>
 
                 </div>
 
@@ -318,7 +343,7 @@
 
                 <div class="form-group">
 
-                    <label for="contactPhone">
+                    <label asp-for="Phone">
                         Phone Number
                     </label>
 
@@ -326,12 +351,15 @@
 
                         <i class="bi bi-telephone"></i>
 
-                        <input type="tel"
-                               id="contactPhone"
+                        <input asp-for="Phone"
                                placeholder="+27 ..."
                                required />
 
                     </div>
+
+                    <span asp-validation-for="Phone"
+                          class="text-danger">
+                    </span>
 
                 </div>
 
@@ -340,7 +368,7 @@
 
                 <div class="form-group">
 
-                    <label for="subject">
+                    <label asp-for="Subject">
                         What can we help you with?
                     </label>
 
@@ -348,9 +376,9 @@
 
                         <i class="bi bi-chat-left-text"></i>
 
-                        <select id="subject" required>
+                        <select asp-for="Subject" required>
 
-                            <option value="" disabled selected>
+                            <option value="">
                                 Select a topic
                             </option>
 
@@ -382,6 +410,10 @@
 
                     </div>
 
+                    <span asp-validation-for="Subject"
+                          class="text-danger">
+                    </span>
+
                 </div>
 
 
@@ -389,7 +421,7 @@
 
                 <div class="form-group">
 
-                    <label for="message">
+                    <label asp-for="Message">
                         Your Message
                     </label>
 
@@ -397,12 +429,16 @@
 
                         <i class="bi bi-pencil"></i>
 
-                        <textarea id="message"
+                        <textarea asp-for="Message"
                                   rows="5"
                                   placeholder="Tell us how we can help..."
                                   required></textarea>
 
                     </div>
+
+                    <span asp-validation-for="Message"
+                          class="text-danger">
+                    </span>
 
                 </div>
 
@@ -411,7 +447,8 @@
 
                 <label class="contact-consent">
 
-                    <input type="checkbox" required />
+                    <input asp-for="Consent"
+                           required />
 
                     <span>
                         I agree that my information may be
@@ -419,6 +456,10 @@
                     </span>
 
                 </label>
+
+                <span asp-validation-for="Consent"
+                      class="text-danger">
+                </span>
 
 
                 <!-- BUTTON -->
@@ -627,51 +668,8 @@
     });
 
 
-    /* =========================================
-       FORM FEEDBACK
-    ========================================= */
-
-    const contactForm =
-        document.querySelector(".contact-form-card form");
-
-
-    if (contactForm) {
-
-        contactForm.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-                const button =
-                    contactForm.querySelector(
-                        ".send-message-btn"
-                    );
-
-                const originalText =
-                    button.innerHTML;
-
-                button.innerHTML =
-                    '<i class="bi bi-check-circle-fill"></i> Message Sent!';
-
-                button.classList.add("success");
-
-                setTimeout(() => {
-
-                    button.innerHTML =
-                        originalText;
-
-                    button.classList.remove(
-                        "success"
-                    );
-
-                    contactForm.reset();
-
-                }, 3000);
-
-            }
-        );
-
-    }
-
 </script>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

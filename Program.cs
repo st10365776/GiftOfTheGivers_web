@@ -1,64 +1,61 @@
 using GiftOfThe_Givers_web.Data;
-using GiftOfTheGivers_web.Data;
+using GiftOfTheGivers_web.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-// =====================================================
-// DATABASE CONNECTION
-// =====================================================
+// ---------------------------------------------------------
+// DATABASE
+// ---------------------------------------------------------
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 
+// ---------------------------------------------------------
+// PASSWORD HASHING
+// ---------------------------------------------------------
 
-// =====================================================
-// COOKIE AUTHENTICATION
-// =====================================================
-
-builder.Services.AddAuthentication(
-    CookieAuthenticationDefaults.AuthenticationScheme
-)
-.AddCookie(options =>
+builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+builder.Services.AddHttpClient("CertificateFunction", client =>
 {
-    // Employee/Admin protected pages will redirect here
-    // when the employee is not logged in.
-    options.LoginPath = "/Employee/Login";
-
-    options.AccessDeniedPath = "/Employee/Login";
-
-    // Keep users logged in for 8 hours.
-    options.ExpireTimeSpan = TimeSpan.FromHours(8);
-
-    // Extend the cookie while the user is active.
-    options.SlidingExpiration = true;
+    client.Timeout = TimeSpan.FromSeconds(15);
 });
 
+// ---------------------------------------------------------
+// AUTHENTICATION
+// ---------------------------------------------------------
 
-// =====================================================
-// AUTHORIZATION
-// =====================================================
+builder.Services
+    .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login";
+        options.AccessDeniedPath = "/";
+
+        // Keep users logged in for 30 days.
+        options.ExpireTimeSpan = TimeSpan.FromDays(30);
+
+        // Extend the cookie while the user is active.
+        options.SlidingExpiration = true;
+    });
 
 builder.Services.AddAuthorization();
 
-
-// =====================================================
+// ---------------------------------------------------------
 // MVC
-// =====================================================
+// ---------------------------------------------------------
 
 builder.Services.AddControllersWithViews();
 
-
 var app = builder.Build();
 
-
-// =====================================================
-// HTTP REQUEST PIPELINE
-// =====================================================
+// ---------------------------------------------------------
+// HTTP PIPELINE
+// ---------------------------------------------------------
 
 if (!app.Environment.IsDevelopment())
 {
@@ -72,21 +69,17 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-
-// Authentication MUST come before Authorization
 app.UseAuthentication();
 
 app.UseAuthorization();
 
-
-// =====================================================
-// DEFAULT MVC ROUTE
-// =====================================================
+// ---------------------------------------------------------
+// DEFAULT ROUTE
+// ---------------------------------------------------------
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
-
 
 app.Run();

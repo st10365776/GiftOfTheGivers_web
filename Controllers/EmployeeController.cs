@@ -20,7 +20,16 @@ public class EmployeeController : Controller
     [HttpGet]
     public IActionResult Login(string? returnUrl = null)
     {
-        if (User.Identity?.IsAuthenticated == true) return RedirectToAction(nameof(Dashboard));
+        if (User.IsInRole("Employee") || User.IsInRole("Admin"))
+        {
+            return RedirectToAction(nameof(Dashboard));
+        }
+
+        if (User.Identity?.IsAuthenticated == true)
+        {
+            return RedirectToAction("Profile", "Account");
+        }
+
         ViewBag.ReturnUrl = returnUrl;
         return View(new EmployeeLoginViewModel());
     }
@@ -30,6 +39,8 @@ public class EmployeeController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Login(EmployeeLoginViewModel model, string? returnUrl = null)
     {
+        ViewBag.ReturnUrl = returnUrl;
+
         if (!ModelState.IsValid) return View(model);
         var email = model.Email.Trim().ToLowerInvariant();
         var employee = await _db.Employees.SingleOrDefaultAsync(e => e.Email.ToLower() == email && e.IsActive);
@@ -46,12 +57,23 @@ public class EmployeeController : Controller
             new(ClaimTypes.Email, employee.Email),
             new(ClaimTypes.Role, employee.Role)
         };
-        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-            new ClaimsPrincipal(new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme)));
-        return LocalRedirect(returnUrl ?? Url.Action(nameof(Dashboard))!);
+        await HttpContext.SignInAsync(
+            CookieAuthenticationDefaults.AuthenticationScheme,
+            new ClaimsPrincipal(new ClaimsIdentity(
+                claims,
+                CookieAuthenticationDefaults.AuthenticationScheme)));
+
+        if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
+        {
+            return LocalRedirect(returnUrl);
+        }
+
+        return RedirectToAction(nameof(Dashboard));
     }
 
     [Authorize(Roles = "Employee,Admin")]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Logout()
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
@@ -157,6 +179,16 @@ public class EmployeeController : Controller
         ViewBag.ActiveProjects = await _db.ReliefProjects.CountAsync(p => p.Status == "Active");
         ViewBag.Projects = await _db.ReliefProjects.CountAsync();
         return View();
+    }
+
+    [Authorize(Roles = "Employee,Admin")]
+    public async Task<IActionResult> ContactMessages()
+    {
+        var messages = await _db.ContactSubmissions
+            .OrderByDescending(message => message.SubmittedAtUtc)
+            .ToListAsync();
+
+        return View(messages);
     }
 
     [Authorize(Roles = "Employee,Admin")]
