@@ -19,7 +19,7 @@
     width: 55%;
     min-height: 100vh;
 
-    background: url('../images/gotg-login.jpg');
+    background: url('../images/asset2.jpg');
     background-size: cover;
     background-position: center;
 
@@ -487,3 +487,4 @@ Password toggle */
         font-size: 28px;
     }
 }
+/* Layout and form styles for signing in. */

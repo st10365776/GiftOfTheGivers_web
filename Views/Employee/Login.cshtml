@@ -1,0 +1,24 @@
+@model GiftOfTheGivers_web.Models.ViewModels.EmployeeLoginViewModel
+@{ ViewData["Title"] = "Employee Login"; }
+<link rel="stylesheet" href="~/css/employee.css" asp-append-version="true" />
+<div class="employee-login-page">
+  <div class="employee-login-card">
+    <img src="~/images/logo1.png" alt="Gift of the Givers" class="employee-login-logo" />
+    <span class="employee-page-label">Secure Staff Portal</span>
+    <h1>Employee / Admin Login</h1>
+    <p>Sign in to manage donations, volunteers and relief operations.</p>
+    <form asp-action="Login" method="post">
+      @Html.AntiForgeryToken()
+      <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+      <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+      <label asp-for="Email">Email Address</label>
+      <input asp-for="Email" autocomplete="username" placeholder="employee@example.com" />
+      <span asp-validation-for="Email" class="text-danger"></span>
+      <label asp-for="Password">Password</label>
+      <input asp-for="Password" autocomplete="current-password" placeholder="Password" />
+      <span asp-validation-for="Password" class="text-danger"></span>
+      <button type="submit" class="employee-primary-button">Sign In</button>
+    </form>
+    <a asp-controller="Home" asp-action="Index">← Back to website</a>
+  </div>
+</div>

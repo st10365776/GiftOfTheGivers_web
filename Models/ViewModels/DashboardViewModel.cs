@@ -1,5 +1,7 @@
-namespace GiftOfTheGivers_web.Models.ViewModels;
+// Provides the employee dashboard with its displayed data.
+using System.ComponentModel.DataAnnotations;
 
-public class DashboardViewModel
+namespace GiftOfTheGivers_web.Models
 {
+    
 }

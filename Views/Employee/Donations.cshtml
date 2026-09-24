@@ -1,10 +1,8 @@
-@{
-    ViewData["Title"] = "Manage Donations";
-}
-
-<div class="container py-5">
-    <h1>Manage Donations</h1>
-    <a asp-controller="Employee" asp-action="DonationDetails">Donation details</a>
-    <a asp-controller="Employee" asp-action="Volunteers">Manage volunteers</a>
-    <a asp-controller="Employee" asp-action="Dashboard">Dashboard</a>
-</div>
+@model IEnumerable<GiftOfTheGivers_web.Models.Donation>
+@{ ViewData["Title"] = "Manage Donations"; }
+<link rel="stylesheet" href="~/css/employee.css" asp-append-version="true" />
+<div class="employee-dashboard"><partial name="_EmployeeSidebar" /><main class="employee-main"><header class="employee-header"><div><p class="employee-page-label">Employee Portal</p><h1>Manage Donations</h1><p class="employee-welcome">All donations are loaded from Azure SQL.</p></div></header>
+<div class="employee-panel"><div class="panel-header"><div><h2>Donations (@Model.Count())</h2></div><div class="filter-links"><a asp-action="Donations">All</a> <a asp-action="Donations" asp-route-status="Pending">Pending</a> <a asp-action="Donations" asp-route-status="Completed">Completed</a> <a asp-action="Donations" asp-route-status="Cancelled">Cancelled</a></div></div>
+<div class="table-wrapper"><table class="employee-table"><thead><tr><th>Donor</th><th>Amount</th><th>Type</th><th>Payment</th><th>Date</th><th>Status</th><th></th></tr></thead><tbody>
+@foreach(var d in Model){<tr><td><strong>@(d.IsAnonymous ? "Anonymous" : d.User?.FullName ?? "Guest")</strong><span class="donor-email">@(d.IsAnonymous ? "Anonymous donation" : d.User?.Email)</span></td><td>@d.Currency @d.Amount.ToString("N2")</td><td>@d.DonationType</td><td>@d.PaymentMethod</td><td>@d.DonationDate.ToLocalTime().ToString("dd MMM yyyy")</td><td><span class="status @d.Status.ToLowerInvariant()">@d.Status</span></td><td><a asp-action="DonationDetails" asp-route-id="@d.DonationID">View</a></td></tr>}
+@if(!Model.Any()){<tr><td colspan="7">No donations found.</td></tr>}</tbody></table></div></div></main></div>

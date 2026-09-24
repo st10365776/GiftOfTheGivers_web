@@ -1,10 +1,4 @@
-@{
-    ViewData["Title"] = "Donation Details";
-}
-
-<div class="container py-5">
-    <h1>Donation Details</h1>
-    <a asp-controller="Employee" asp-action="Donations">All donations</a>
-    <a asp-controller="Employee" asp-action="Dashboard">Dashboard</a>
-    <a asp-controller="Donation" asp-action="Index">Public donations page</a>
-</div>
+@model GiftOfTheGivers_web.Models.Donation
+@{ ViewData["Title"] = "Donation Details"; }
+<link rel="stylesheet" href="~/css/employee.css" asp-append-version="true" />
+<div class="employee-dashboard"><partial name="_EmployeeSidebar" /><main class="employee-main"><header class="employee-header"><div><p class="employee-page-label">Donation #@Model.DonationID</p><h1>Donation Details</h1></div></header><div class="employee-panel detail-grid"><div><span>Donor</span><strong>@(Model.IsAnonymous ? "Anonymous" : Model.User?.FullName ?? "Guest")</strong></div><div><span>Email</span><strong>@(Model.IsAnonymous ? "Hidden" : Model.User?.Email ?? "Not supplied")</strong></div><div><span>Amount</span><strong>@Model.Currency @Model.Amount.ToString("N2")</strong></div><div><span>Type</span><strong>@Model.DonationType</strong></div><div><span>Payment</span><strong>@Model.PaymentMethod</strong></div><div><span>Date</span><strong>@Model.DonationDate.ToLocalTime().ToString("f")</strong></div><div><span>Description</span><strong>@Model.Description</strong></div><div><span>Status</span><strong>@Model.Status</strong></div></div><div class="employee-panel"><form asp-action="UpdateDonationStatus" method="post">@Html.AntiForgeryToken()<input type="hidden" name="id" value="@Model.DonationID"/><label>Update status</label><select name="status"><option>Pending</option><option>Completed</option><option>Cancelled</option></select><button class="employee-primary-button" type="submit">Save Status</button></form></div></main></div>

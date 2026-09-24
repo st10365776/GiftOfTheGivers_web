@@ -1,10 +1,4 @@
-@{
-    ViewData["Title"] = "Confirm Application";
-}
-
-<div class="container py-5">
-    <h1>Confirm Application</h1>
-    <a asp-controller="Volunteer" asp-action="Details">View volunteer details</a>
-    <a asp-controller="Volunteer" asp-action="Index">Back to volunteering</a>
-    <a asp-controller="Home" asp-action="Index">Return home</a>
-</div>
+@model GiftOfTheGivers_web.Models.ViewModels.VolunteerApplicationViewModel
+@{ ViewData["Title"] = "Application Submitted"; }
+<link rel="stylesheet" href="~/css/volunteer.css" />
+<section class="confirm-page"><div class="confirm-icon"><i class="bi bi-check-circle-fill"></i></div><span class="section-label">APPLICATION RECEIVED</span><h1>Thank You, <span>@Model.FirstName.</span></h1><p class="confirm-intro">Your volunteer application has been saved. Our team can now review it from the employee dashboard.</p><div class="review-card"><div class="review-row"><div class="review-item"><span>Name</span><strong>@Model.FirstName @Model.LastName</strong></div><div class="review-item"><span>Email</span><strong>@Model.Email</strong></div></div><div class="review-row"><div class="review-item"><span>Area</span><strong>@Model.Area</strong></div><div class="review-item"><span>Availability</span><strong>@Model.Availability</strong></div></div></div><a asp-controller="Volunteer" asp-action="Index" class="volunteer-primary-btn">Back to Volunteering <i class="bi bi-arrow-right"></i></a></section>

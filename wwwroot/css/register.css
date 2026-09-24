@@ -39,8 +39,7 @@
 
     min-height: 100vh;
 
-    background-image:
-        url('/images/gotg-register.png');
+    background-image: url('../images/asset1.jpg');
 
     background-size: cover;
 
@@ -901,3 +900,4 @@
             12px;
     }
 }
+/* Layout and form styles for creating an account. */
