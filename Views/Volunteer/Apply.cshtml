@@ -1,3 +1,4 @@
+@model GiftOfTheGivers_web.Models.ViewModels.VolunteerApplicationViewModel
 @{
     ViewData["Title"] = "Volunteer Application";
 }
@@ -70,7 +71,7 @@
 
         <form asp-controller="Volunteer"
               asp-action="Confirm"
-              method="get">
+              method="post">
 
             <!-- PERSONAL DETAILS -->
 
@@ -107,7 +108,7 @@
 
                         <input type="text"
                                id="firstName"
-                               name="firstName"
+                               asp-for="FirstName"
                                placeholder="Enter your first name"
                                required />
 
@@ -128,7 +129,7 @@
 
                         <input type="text"
                                id="lastName"
-                               name="lastName"
+                               asp-for="LastName"
                                placeholder="Enter your last name"
                                required />
 
@@ -149,7 +150,7 @@
 
                         <input type="email"
                                id="email"
-                               name="email"
+                               asp-for="Email"
                                placeholder="you@example.com"
                                required />
 
@@ -170,7 +171,7 @@
 
                         <input type="tel"
                                id="phone"
-                               name="phone"
+                               asp-for="Phone"
                                placeholder="+27 ..."
                                required />
 
@@ -215,7 +216,7 @@
                         <i class="bi bi-heart"></i>
 
                         <select id="area"
-                                name="area"
+                                asp-for="Area"
                                 required>
 
                             <option value="" selected disabled>
@@ -260,7 +261,7 @@
                         <i class="bi bi-calendar"></i>
 
                         <select id="availability"
-                                name="availability"
+                                asp-for="Availability"
                                 required>
 
                             <option value="" selected disabled>

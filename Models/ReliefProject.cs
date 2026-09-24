@@ -1,23 +1,24 @@
-﻿namespace GiftOfTheGivers_web.Models
+using System.ComponentModel.DataAnnotations;
+
+namespace GiftOfTheGivers_web.Models;
+
+public class ReliefProject
 {
-    public class ReliefProject
-    {
-        public int ProjectID { get; set; }
+    [Key]
+    public int ProjectID { get; set; }
 
-        public string ProjectName { get; set; }
+    public string ProjectName { get; set; } = string.Empty;
 
-        public string? Description { get; set; }
+    public string? Description { get; set; }
 
-        public string? Location { get; set; }
+    public string? Location { get; set; }
 
-        public DateTime? StartDate { get; set; }
+    public DateTime? StartDate { get; set; }
 
-        public DateTime? EndDate { get; set; }
+    public DateTime? EndDate { get; set; }
 
-        public string Status { get; set; }
+    public string Status { get; set; } = "Planning";
 
-        // RELATIONSHIP
-        public ICollection<VolunteerProject> VolunteerProjects { get; set; }
-            = new List<VolunteerProject>();
-    }
+    public ICollection<VolunteerProject> VolunteerProjects { get; set; }
+        = new List<VolunteerProject>();
 }
