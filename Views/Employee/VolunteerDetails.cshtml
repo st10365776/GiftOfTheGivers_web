@@ -1,11 +1,4 @@
-@* Detailed volunteer application information for employees. *@
-@{
-    ViewData["Title"] = "Volunteer Details";
-}
-
-<div class="container py-5">
-    <h1>Volunteer Details</h1>
-    <a asp-controller="Employee" asp-action="Volunteers">All volunteers</a>
-    <a asp-controller="Employee" asp-action="Dashboard">Dashboard</a>
-    <a asp-controller="Volunteer" asp-action="Index">Public volunteering page</a>
-</div>
+@model GiftOfTheGivers_web.Models.Volunteer
+@{ ViewData["Title"] = "Volunteer Details"; }
+<link rel="stylesheet" href="~/css/employee.css" asp-append-version="true" />
+<div class="employee-dashboard"><partial name="_EmployeeSidebar" /><main class="employee-main"><header class="employee-header"><div><p class="employee-page-label">Volunteer #@Model.VolunteerID</p><h1>Volunteer Details</h1></div></header><div class="employee-panel detail-grid"><div><span>Name</span><strong>@Model.User?.FullName</strong></div><div><span>Email</span><strong>@Model.User?.Email</strong></div><div><span>Phone</span><strong>@Model.User?.PhoneNumber</strong></div><div><span>Area / Skills</span><strong>@Model.Skills</strong></div><div><span>Availability</span><strong>@Model.Availability</strong></div><div><span>Location</span><strong>@Model.Location</strong></div><div><span>Applied</span><strong>@Model.AppliedDate.ToLocalTime().ToString("f")</strong></div><div><span>Status</span><strong>@Model.Status</strong></div></div><div class="employee-panel"><form asp-action="UpdateVolunteerStatus" method="post">@Html.AntiForgeryToken()<input type="hidden" name="id" value="@Model.VolunteerID"/><label>Update status</label><select name="status"><option>Pending</option><option>Approved</option><option>Rejected</option></select><button class="employee-primary-button" type="submit">Save Status</button></form></div></main></div>

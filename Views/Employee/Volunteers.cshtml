@@ -1,11 +1,4 @@
-@* Employee list of volunteer applications. *@
-@{
-    ViewData["Title"] = "Manage Volunteers";
-}
-
-<div class="container py-5">
-    <h1>Manage Volunteers</h1>
-    <a asp-controller="Employee" asp-action="VolunteerDetails">Volunteer details</a>
-    <a asp-controller="Employee" asp-action="Donations">Manage donations</a>
-    <a asp-controller="Employee" asp-action="Dashboard">Dashboard</a>
-</div>
+@model IEnumerable<GiftOfTheGivers_web.Models.Volunteer>
+@{ ViewData["Title"] = "Manage Volunteers"; }
+<link rel="stylesheet" href="~/css/employee.css" asp-append-version="true" />
+<div class="employee-dashboard"><partial name="_EmployeeSidebar" /><main class="employee-main"><header class="employee-header"><div><p class="employee-page-label">Employee Portal</p><h1>Manage Volunteers</h1><p class="employee-welcome">Review applications stored in Azure SQL.</p></div></header><div class="employee-panel"><div class="panel-header"><h2>Volunteer Applications (@Model.Count())</h2><div><a asp-action="Volunteers">All</a> <a asp-action="Volunteers" asp-route-status="Pending">Pending</a> <a asp-action="Volunteers" asp-route-status="Approved">Approved</a></div></div><div class="table-wrapper"><table class="employee-table"><thead><tr><th>Name</th><th>Email</th><th>Interest</th><th>Availability</th><th>Applied</th><th>Status</th><th></th></tr></thead><tbody>@foreach(var v in Model){<tr><td><strong>@v.User?.FullName</strong></td><td>@v.User?.Email</td><td>@v.Skills</td><td>@v.Availability</td><td>@v.AppliedDate.ToLocalTime().ToString("dd MMM yyyy")</td><td><span class="status @v.Status.ToLowerInvariant()">@v.Status</span></td><td><a asp-action="VolunteerDetails" asp-route-id="@v.VolunteerID">View</a></td></tr>}@if(!Model.Any()){<tr><td colspan="7">No volunteer applications found.</td></tr>}</tbody></table></div></div></main></div>

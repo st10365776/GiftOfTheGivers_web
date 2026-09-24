@@ -1,6 +1,13 @@
-// Represents an employee who works with the organisation.
 namespace GiftOfTheGivers_web.Models;
 
 public class Employee
 {
+    public int EmployeeID { get; set; }
+    public string FullName { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string PasswordHash { get; set; } = string.Empty;
+    public string Role { get; set; } = "Employee";
+    public string? PhoneNumber { get; set; }
+    public bool IsActive { get; set; } = true;
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }
