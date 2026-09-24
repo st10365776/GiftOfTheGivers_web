@@ -71,49 +71,36 @@
             </div>
 
 
-            <form>
-
-                <!-- FIRST + LAST NAME -->
-                <div class="name-row">
-
-                    <div class="input-group-custom">
-
-                        <label for="firstName">
-                            First Name
-                        </label>
-
-                        <div class="input-wrapper">
-
-                            <i class="bi bi-person"></i>
-
-                            <input type="text"
-                                   id="firstName"
-                                   name="firstName"
-                                   placeholder="First name"
-                                   required />
-
-                        </div>
-
-                    </div>
+            <!-- Validation messages -->
+            <div asp-validation-summary="All"
+                 class="text-danger">
+            </div>
 
 
-                    <div class="input-group-custom">
+            <!-- REGISTRATION FORM -->
+            <form asp-controller="Account"
+                  asp-action="Register"
+                  method="post">
 
-                        <label for="lastName">
-                            Last Name
-                        </label>
+                @Html.AntiForgeryToken()
 
-                        <div class="input-wrapper">
 
-                            <i class="bi bi-person"></i>
+                <!-- FULL NAME -->
+                <div class="input-group-custom">
 
-                            <input type="text"
-                                   id="lastName"
-                                   name="lastName"
-                                   placeholder="Last name"
-                                   required />
+                    <label for="fullName">
+                        Full Name
+                    </label>
 
-                        </div>
+                    <div class="input-wrapper">
+
+                        <i class="bi bi-person"></i>
+
+                        <input type="text"
+                               id="fullName"
+                               name="FullName"
+                               placeholder="Enter your full name"
+                               required />
 
                     </div>
 
@@ -133,7 +120,7 @@
 
                         <input type="email"
                                id="email"
-                               name="email"
+                               name="Email"
                                placeholder="Enter your email"
                                required />
 
@@ -145,7 +132,7 @@
                 <!-- PHONE -->
                 <div class="input-group-custom">
 
-                    <label for="phone">
+                    <label for="phoneNumber">
                         Phone Number
                     </label>
 
@@ -154,8 +141,8 @@
                         <i class="bi bi-telephone"></i>
 
                         <input type="tel"
-                               id="phone"
-                               name="phone"
+                               id="phoneNumber"
+                               name="PhoneNumber"
                                placeholder="Enter your phone number"
                                required />
 
@@ -164,10 +151,10 @@
                 </div>
 
 
-                <!-- ACCOUNT TYPE -->
+                <!-- ACCOUNT TYPE / ROLE -->
                 <div class="input-group-custom">
 
-                    <label for="accountType">
+                    <label for="role">
                         I want to join as
                     </label>
 
@@ -175,8 +162,8 @@
 
                         <i class="bi bi-people"></i>
 
-                        <select id="accountType"
-                                name="accountType"
+                        <select id="role"
+                                name="Role"
                                 required>
 
                             <option value="" disabled selected>
@@ -217,7 +204,7 @@
 
                             <input type="password"
                                    id="password"
-                                   name="password"
+                                   name="Password"
                                    placeholder="Create password"
                                    required />
 
@@ -235,6 +222,7 @@
                     </div>
 
 
+                    <!-- CONFIRM PASSWORD -->
                     <div class="input-group-custom">
 
                         <label for="confirmPassword">
@@ -273,6 +261,8 @@
                     <label>
 
                         <input type="checkbox"
+                               name="termsAccepted"
+                               value="true"
                                required />
 
                         <span>
@@ -370,6 +360,7 @@
             eyeIcon.classList.remove("bi-eye-slash");
 
             eyeIcon.classList.add("bi-eye");
+
         }
     }
 
