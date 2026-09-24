@@ -1,0 +1,35 @@
+@model GiftOfTheGivers_web.Models.Donation
+
+@{
+    ViewData["Title"] = "Tax Certificate";
+}
+
+<section class="thank-you-page">
+    <div class="container">
+        <div class="thank-you-card">
+            <span class="hero-label">Tax Certificate</span>
+            <h1>Donation Certificate</h1>
+
+            <p class="thank-you-message">
+                This confirms your donation to Gift of the Givers.
+            </p>
+
+            <p class="thank-you-small">
+                Certificate number: <strong>@Model.CertificateNumber</strong>
+            </p>
+            <p class="thank-you-small">
+                Donation: <strong>@Model.Currency @Model.Amount.ToString("N2")</strong>
+            </p>
+            <p class="thank-you-small">
+                Issued: <strong>@Model.CertificateIssuedAtUtc?.ToLocalTime().ToString("d MMMM yyyy")</strong>
+            </p>
+
+            <div class="thank-you-buttons">
+                <a asp-action="History"
+                   class="btn btn-donate-continue">
+                    Back to Donation History
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
