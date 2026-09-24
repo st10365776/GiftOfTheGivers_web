@@ -16,6 +16,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Donation> Donations => Set<Donation>();
     public DbSet<ReliefProject> ReliefProjects => Set<ReliefProject>();
     public DbSet<VolunteerProject> VolunteerProjects => Set<VolunteerProject>();
+    public DbSet<ContactSubmission> ContactSubmissions => Set<ContactSubmission>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -42,6 +43,9 @@ public class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<VolunteerProject>()
             .HasKey(vp => vp.VolunteerProjectID);
+
+        modelBuilder.Entity<ContactSubmission>()
+            .HasKey(c => c.ContactSubmissionID);
 
 
         /* =========================
@@ -81,6 +85,10 @@ public class ApplicationDbContext : DbContext
             .WithOne(u => u.Volunteer)
             .HasForeignKey<Volunteer>(v => v.UserID)
             .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Volunteer>()
+            .HasIndex(v => v.UserID)
+            .IsUnique();
 
 
         /* =========================

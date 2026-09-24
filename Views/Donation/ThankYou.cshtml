@@ -1,6 +1,8 @@
 @* Confirmation shown after a donation is received. *@
 @{
     ViewData["Title"] = "Thank You";
+    var certificateNumber = TempData.Peek("CertificateNumber") as string;
+    var certificateError = TempData.Peek("CertificateError") as string;
 }
 
 <section class="thank-you-page">
@@ -26,6 +28,19 @@
                 Every contribution makes a difference.
             </p>
 
+            @if (!string.IsNullOrWhiteSpace(certificateNumber))
+            {
+                <p class="thank-you-small">
+                    Your tax certificate number is <strong>@certificateNumber</strong>.
+                </p>
+            }
+            else if (!string.IsNullOrWhiteSpace(certificateError))
+            {
+                <p class="thank-you-small text-warning">
+                    @certificateError
+                </p>
+            }
+
             <div class="thank-you-buttons">
 
                 <a asp-controller="Home"
@@ -39,6 +54,18 @@
                    class="btn btn-thank-you-outline">
                     Make Another Donation
                 </a>
+
+                @if (ViewBag.DonationId is int donationId &&
+                     User.IsInRole("User") &&
+                     !string.IsNullOrWhiteSpace(certificateNumber))
+                {
+                    <a asp-controller="Donation"
+                       asp-action="Certificate"
+                       asp-route-id="@donationId"
+                       class="btn btn-thank-you-outline">
+                        View Tax Certificate
+                    </a>
+                }
 
             </div>
 

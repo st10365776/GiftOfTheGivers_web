@@ -2,12 +2,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GiftOfTheGivers_web.Models.ViewModels;
 
-public class VolunteerApplicationViewModel
+public class ContactMessageViewModel
 {
     [Required]
+    [Display(Name = "First Name")]
     public string FirstName { get; set; } = string.Empty;
 
     [Required]
+    [Display(Name = "Last Name")]
     public string LastName { get; set; } = string.Empty;
 
     [Required]
@@ -15,17 +17,16 @@ public class VolunteerApplicationViewModel
     public string Email { get; set; } = string.Empty;
 
     [Required]
+    [Phone]
+    [Display(Name = "Phone Number")]
     public string Phone { get; set; } = string.Empty;
 
     [Required]
-    public string Area { get; set; } = string.Empty;
+    public string Subject { get; set; } = string.Empty;
 
     [Required]
-    public string Availability { get; set; } = string.Empty;
+    [StringLength(4000)]
+    public string Message { get; set; } = string.Empty;
 
-    [Required]
-    public string Location { get; set; } = string.Empty;
-
-    [Required]
-    public string About { get; set; } = string.Empty;
+    public bool Consent { get; set; }
 }

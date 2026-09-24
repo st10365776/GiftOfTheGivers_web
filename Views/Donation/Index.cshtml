@@ -1,8 +1,11 @@
-@* Donation form for choosing frequency, currency, and amount. *@
-@model GiftOfTheGivers_web.Models.DonationViewModel
+@model GiftOfTheGivers_web.Models.ViewModels.DonationViewModel
 
 @{
     ViewData["Title"] = "Make a Donation";
+
+    var loggedIn =
+        User.Identity?.IsAuthenticated == true &&
+        User.IsInRole("User");
 }
 
 <section class="donation-page">
@@ -15,7 +18,9 @@
                 Support Our Work
             </span>
 
-            <h1>Make a Donation</h1>
+            <h1>
+                Make a Donation
+            </h1>
 
             <p>
                 Your donation helps provide essential humanitarian
@@ -24,6 +29,19 @@
 
         </div>
 
+        @if (!loggedIn)
+        {
+            <div class="alert alert-info">
+                You are donating as a guest.
+                Your donation will automatically be recorded as
+                <strong>Anonymous</strong>.
+                <a asp-controller="Account"
+                   asp-action="Login">
+                    Log in
+                </a>
+                if you would like the donation linked to your account.
+            </div>
+        }
 
         <div class="donation-card">
 
@@ -31,64 +49,94 @@
                   asp-action="Index"
                   method="post">
 
-                <h2>How would you like to donate?</h2>
+                @Html.AntiForgeryToken()
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3">
+                </div>
+
+                <h2>
+                    How would you like to donate?
+                </h2>
+
+                <!-- DONATION TYPE -->
 
                 <div class="donation-type">
 
                     <button type="button"
                             class="donation-type-btn active"
                             data-type="Once-off">
+
                         Once-off
+
                     </button>
 
                     <button type="button"
                             class="donation-type-btn"
                             data-type="Monthly">
+
                         Monthly
+
                     </button>
 
                 </div>
 
                 <input type="hidden"
                        id="donationType"
-                       name="DonationType"
-                       value="Once-off" />
+                       asp-for="DonationType" />
 
+                <!-- CURRENCY -->
 
-                <h3>Donation currency</h3>
+                <h3>
+                    Donation currency
+                </h3>
 
                 <div class="currency-options">
 
                     <button type="button"
                             class="currency-btn active"
                             data-currency="ZAR">
+
                         ZAR
-                        <span>South African Rand</span>
+                        <span>
+                            South African Rand
+                        </span>
+
                     </button>
 
                     <button type="button"
                             class="currency-btn"
                             data-currency="USD">
+
                         USD
-                        <span>US Dollar</span>
+                        <span>
+                            US Dollar
+                        </span>
+
                     </button>
 
                     <button type="button"
                             class="currency-btn"
                             data-currency="EUR">
+
                         EUR
-                        <span>Euro</span>
+                        <span>
+                            Euro
+                        </span>
+
                     </button>
 
                 </div>
 
                 <input type="hidden"
                        id="donationCurrency"
-                       name="Currency"
-                       value="ZAR" />
+                       asp-for="Currency" />
 
+                <!-- AMOUNT -->
 
-                <h3>Select amount</h3>
+                <h3>
+                    Select amount
+                </h3>
 
                 <div class="donation-amounts">
 
@@ -132,8 +180,13 @@
 
                 <input type="hidden"
                        id="donationAmount"
-                       name="Amount" />
+                       asp-for="Amount" />
 
+                <span asp-validation-for="Amount"
+                      class="text-danger">
+                </span>
+
+                <!-- CUSTOM AMOUNT -->
 
                 <div class="custom-amount"
                      id="customAmountContainer">
@@ -146,21 +199,24 @@
                            id="customAmount"
                            class="form-control"
                            min="1"
+                           step="0.01"
                            placeholder="Enter amount" />
 
                 </div>
 
+                <!-- PAYMENT -->
 
-                <h3>Payment Method</h3>
+                <h3>
+                    Payment Method
+                </h3>
 
                 <div class="payment-methods">
 
                     <label class="payment-option">
 
                         <input type="radio"
-                               name="PaymentMethod"
-                               value="Card"
-                               checked />
+                               asp-for="PaymentMethod"
+                               value="Card" />
 
                         <span>
                             Credit / Debit Card
@@ -168,11 +224,10 @@
 
                     </label>
 
-
                     <label class="payment-option">
 
                         <input type="radio"
-                               name="PaymentMethod"
+                               asp-for="PaymentMethod"
                                value="EFT" />
 
                         <span>
@@ -183,53 +238,96 @@
 
                 </div>
 
+                <!-- ANONYMOUS -->
 
-                <div class="anonymous-option">
+                @if (loggedIn)
+                {
+                    <div class="anonymous-option">
 
-                    <label>
+                        <label>
 
-                        <input type="checkbox"
-                               name="DonateAnonymously"
-                               value="true" />
+                            <input type="checkbox"
+                                   asp-for="IsAnonymous" />
 
-                        <span>
-                            Donate anonymously
-                        </span>
+                            <span>
+                                Donate anonymously
+                            </span>
 
-                    </label>
+                        </label>
 
-                    <p>
-                        Your name will not be displayed publicly
-                        as a donor.
-                    </p>
+                        <p>
+                            Your name will not be displayed publicly
+                            as a donor.
+                        </p>
 
-                </div>
+                    </div>
+                }
+                else
+                {
+                    <input type="hidden"
+                           asp-for="IsAnonymous"
+                           value="true" />
 
+                    <div class="anonymous-option">
+
+                        <label>
+
+                            <input type="checkbox"
+                                   checked
+                                   disabled />
+
+                            <span>
+                                Anonymous donation
+                            </span>
+
+                        </label>
+
+                        <p>
+                            Guest donations are automatically anonymous.
+                        </p>
+
+                    </div>
+                }
+
+                <!-- SUMMARY -->
 
                 <div class="donation-summary">
 
                     <div>
-                        <span>Donation</span>
+
+                        <span>
+                            Donation
+                        </span>
+
                         <strong id="summaryAmount">
                             R0
                         </strong>
+
                     </div>
 
                     <div>
-                        <span>Frequency</span>
+
+                        <span>
+                            Frequency
+                        </span>
+
                         <strong id="summaryType">
                             Once-off
                         </strong>
+
                     </div>
 
                 </div>
 
+                <!-- BUTTON -->
 
                 <div class="donation-action">
 
                     <button type="submit"
                             class="btn btn-donate-continue">
+
                         Continue
+
                     </button>
 
                 </div>
@@ -241,3 +339,254 @@
     </div>
 
 </section>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const typeButtons =
+                    document.querySelectorAll(
+                        ".donation-type-btn"
+                    );
+
+                const currencyButtons =
+                    document.querySelectorAll(
+                        ".currency-btn"
+                    );
+
+                const amountButtons =
+                    document.querySelectorAll(
+                        ".amount-btn"
+                    );
+
+                const donationType =
+                    document.getElementById(
+                        "donationType"
+                    );
+
+                const donationCurrency =
+                    document.getElementById(
+                        "donationCurrency"
+                    );
+
+                const donationAmount =
+                    document.getElementById(
+                        "donationAmount"
+                    );
+
+                const customButton =
+                    document.getElementById(
+                        "customButton"
+                    );
+
+                const customContainer =
+                    document.getElementById(
+                        "customAmountContainer"
+                    );
+
+                const customAmount =
+                    document.getElementById(
+                        "customAmount"
+                    );
+
+                const summaryAmount =
+                    document.getElementById(
+                        "summaryAmount"
+                    );
+
+                const summaryType =
+                    document.getElementById(
+                        "summaryType"
+                    );
+
+
+                // -----------------------------------------
+                // DONATION TYPE
+                // -----------------------------------------
+
+                typeButtons.forEach(button => {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            typeButtons.forEach(
+                                b =>
+                                    b.classList.remove(
+                                        "active"
+                                    )
+                            );
+
+                            button.classList.add(
+                                "active"
+                            );
+
+                            donationType.value =
+                                button.dataset.type;
+
+                            summaryType.textContent =
+                                button.dataset.type;
+                        }
+                    );
+
+                });
+
+
+                // -----------------------------------------
+                // CURRENCY
+                // -----------------------------------------
+
+                currencyButtons.forEach(button => {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            currencyButtons.forEach(
+                                b =>
+                                    b.classList.remove(
+                                        "active"
+                                    )
+                            );
+
+                            button.classList.add(
+                                "active"
+                            );
+
+                            donationCurrency.value =
+                                button.dataset.currency;
+
+                            updateSummary();
+                        }
+                    );
+
+                });
+
+
+                // -----------------------------------------
+                // PRESET AMOUNTS
+                // -----------------------------------------
+
+                amountButtons.forEach(button => {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            amountButtons.forEach(
+                                b =>
+                                    b.classList.remove(
+                                        "active"
+                                    )
+                            );
+
+                            button.classList.add(
+                                "active"
+                            );
+
+                            if (
+                                button.dataset.amount
+                            ) {
+
+                                donationAmount.value =
+                                    button.dataset.amount;
+
+                                customContainer
+                                    .classList
+                                    .remove("show");
+
+                                updateSummary();
+                            }
+                        }
+                    );
+
+                });
+
+
+                // -----------------------------------------
+                // CUSTOM AMOUNT
+                // -----------------------------------------
+
+                customButton.addEventListener(
+                    "click",
+                    function () {
+
+                        amountButtons.forEach(
+                            b =>
+                                b.classList.remove(
+                                    "active"
+                                )
+                        );
+
+                        customButton.classList.add(
+                            "active"
+                        );
+
+                        customContainer
+                            .classList
+                            .add("show");
+
+                        customAmount.focus();
+                    }
+                );
+
+
+                customAmount.addEventListener(
+                    "input",
+                    function () {
+
+                        donationAmount.value =
+                            customAmount.value;
+
+                        updateSummary();
+                    }
+                );
+
+
+                // -----------------------------------------
+                // SUMMARY
+                // -----------------------------------------
+
+                function updateSummary()
+                {
+                    const amount =
+                        parseFloat(
+                            donationAmount.value
+                        ) || 0;
+
+                    const currency =
+                        donationCurrency.value;
+
+                    let symbol = "R";
+
+                    if (currency === "USD")
+                    {
+                        symbol = "$";
+                    }
+                    else if (currency === "EUR")
+                    {
+                        symbol = "€";
+                    }
+
+                    summaryAmount.textContent =
+                        symbol +
+                        amount.toLocaleString(
+                            undefined,
+                            {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                            }
+                        );
+                }
+
+            }
+        );
+
+    </script>
+}
