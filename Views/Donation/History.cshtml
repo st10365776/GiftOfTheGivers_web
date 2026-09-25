@@ -1,30 +1,18 @@
-@* Lists recent donations and their completion status. *@
+@model IReadOnlyList<GiftOfTheGivers_web.Models.Donation>
+
 @{
     ViewData["Title"] = "Donation History";
 }
 
 <section class="donation-page">
-
     <div class="container">
-
         <div class="donation-header">
-
-            <span class="hero-label">
-                Your Donations
-            </span>
-
+            <span class="hero-label">Your Donations</span>
             <h1>Donation History</h1>
-
-            <p>
-                View your previous donations and download
-                your donation documents.
-            </p>
-
+            <p>View your previous donations and download your donation documents.</p>
         </div>
 
-
         <div class="history-card">
-
             <div class="history-header">
                 <div>
                     <h2>Your Donations</h2>
@@ -38,90 +26,44 @@
                 </a>
             </div>
 
-
             <div class="donation-history">
-
-                <div class="history-item">
-
-                    <div>
-                        <strong>R500 ZAR</strong>
-                        <span>26 August 2026</span>
-                    </div>
-
-                    <div>
-                        <span>Once-off</span>
-                    </div>
-
-                    <div>
-                        <span class="status-completed">
-                            Completed
-                        </span>
-                    </div>
-
-                    <div>
-                        <button class="btn certificate-btn">
-                            Tax Certificate
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="history-item">
-
-                    <div>
-                        <strong>$50 USD</strong>
-                        <span>12 August 2026</span>
-                    </div>
-
-                    <div>
-                        <span>Monthly</span>
-                    </div>
-
-                    <div>
-                        <span class="status-completed">
-                            Completed
-                        </span>
-                    </div>
-
-                    <div>
-                        <button class="btn certificate-btn">
-                            Tax Certificate
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="history-item">
-
-                    <div>
-                        <strong>€100 EUR</strong>
-                        <span>4 July 2026</span>
-                    </div>
-
-                    <div>
-                        <span>Once-off</span>
-                    </div>
-
-                    <div>
-                        <span class="status-completed">
-                            Completed
-                        </span>
-                    </div>
-
-                    <div>
-                        <button class="btn certificate-btn">
-                            Tax Certificate
-                        </button>
-                    </div>
-
-                </div>
-
+                @if (Model.Count == 0)
+                {
+                    <p class="mb-0">You have not made any donations yet.</p>
+                }
+                else
+                {
+                    @foreach (var donation in Model)
+                    {
+                        <div class="history-item">
+                            <div>
+                                <strong>@donation.Amount.ToString("N2") @donation.Currency</strong>
+                                <span>@donation.DonationDate.ToLocalTime().ToString("d MMMM yyyy")</span>
+                            </div>
+                            <div>
+                                <span>@donation.DonationType</span>
+                            </div>
+                            <div>
+                                <span class="status-completed">@donation.Status</span>
+                            </div>
+                            <div>
+                                @if (!string.IsNullOrWhiteSpace(donation.CertificateNumber))
+                                {
+                                    <a asp-action="Certificate"
+                                       asp-route-id="@donation.DonationID"
+                                       class="btn certificate-btn">
+                                        Tax Certificate
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span>Certificate pending</span>
+                                }
+                            </div>
+                        </div>
+                    }
+                }
             </div>
-
         </div>
-
     </div>
-
 </section>

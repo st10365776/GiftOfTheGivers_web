@@ -1,21 +1,27 @@
-@* Review page shown before a donation is completed. *@
-@model GiftOfTheGivers_web.Models.DonationViewModel
+@model GiftOfTheGivers_web.Models.ViewModels.DonationViewModel
 
 @{
     ViewData["Title"] = "Donation Details";
 }
 
 <section class="donation-page">
+
     <div class="container">
 
         <div class="donation-header">
-            <span class="hero-label">Thank You</span>
 
-            <h1>Donation Details</h1>
+            <span class="hero-label">
+                Thank You
+            </span>
+
+            <h1>
+                Donation Details
+            </h1>
 
             <p>
                 Please review your donation before continuing.
             </p>
+
         </div>
 
         <div class="donation-card">
@@ -24,39 +30,86 @@
                   asp-action="Complete"
                   method="post">
 
-                <input type="hidden" asp-for="DonationType" />
-                <input type="hidden" asp-for="Currency" />
-                <input type="hidden" asp-for="Amount" />
-                <input type="hidden" asp-for="PaymentMethod" />
-                <input type="hidden" asp-for="IsAnonymous" />
+                @Html.AntiForgeryToken()
+
+                <input type="hidden"
+                       asp-for="DonationType" />
+
+                <input type="hidden"
+                       asp-for="Currency" />
+
+                <input type="hidden"
+                       asp-for="Amount" />
+
+                <input type="hidden"
+                       asp-for="PaymentMethod" />
+
+                <input type="hidden"
+                       asp-for="IsAnonymous" />
 
                 <div class="donation-summary">
 
                     <div class="summary-row">
-                        <span>Donation Type</span>
-                        <strong>@Model.DonationType</strong>
+
+                        <span>
+                            Donation Type
+                        </span>
+
+                        <strong>
+                            @Model.DonationType
+                        </strong>
+
                     </div>
 
                     <div class="summary-row">
-                        <span>Amount</span>
+
+                        <span>
+                            Amount
+                        </span>
+
                         <strong>
+
                             @(Model.Currency switch
                             {
                                 "USD" => "$",
                                 "EUR" => "€",
                                 _ => "R"
-                            }) @Model.Amount.ToString("N2") @Model.Currency
+                            })
+
+                            @Model.Amount.ToString("N2")
+
+                            @Model.Currency
+
                         </strong>
+
                     </div>
 
                     <div class="summary-row">
-                        <span>Payment Method</span>
-                        <strong>@Model.PaymentMethod</strong>
+
+                        <span>
+                            Payment Method
+                        </span>
+
+                        <strong>
+                            @Model.PaymentMethod
+                        </strong>
+
                     </div>
 
                     <div class="summary-row">
-                        <span>Donor identity</span>
-                        <strong>@(Model.IsAnonymous ? "Anonymous" : "Provided at payment")</strong>
+
+                        <span>
+                            Donor identity
+                        </span>
+
+                        <strong>
+
+                            @(Model.IsAnonymous
+                                ? "Anonymous"
+                                : "Linked to your account")
+
+                        </strong>
+
                     </div>
 
                 </div>
@@ -66,18 +119,24 @@
                     <a asp-controller="Donation"
                        asp-action="Index"
                        class="btn btn-outline-secondary">
+
                         Go Back
+
                     </a>
 
                     <button type="submit"
                             class="btn btn-donate-continue">
+
                         Complete Donation
+
                     </button>
 
                 </div>
 
             </form>
+
         </div>
 
     </div>
+
 </section>

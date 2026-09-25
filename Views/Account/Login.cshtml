@@ -63,6 +63,9 @@
                   method="post">
 
                 @Html.AntiForgeryToken()
+                <input type="hidden"
+                       name="returnUrl"
+                       value="@ViewBag.ReturnUrl" />
 
 
                 @* EMAIL *@

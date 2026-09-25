@@ -1,92 +1,186 @@
+@model GiftOfTheGivers_web.Models.User
+
 @{
     ViewData["Title"] = "My Profile";
+
+    var initials = string.Join(
+        "",
+        (Model.FullName ?? "U")
+            .Split(
+                ' ',
+                StringSplitOptions.RemoveEmptyEntries)
+            .Take(2)
+            .Select(x => x[0])
+    ).ToUpperInvariant();
+
+    var donations =
+        Model.Donations?
+            .OrderByDescending(d => d.DonationDate)
+            .ToList()
+        ?? new List<GiftOfTheGivers_web.Models.Donation>();
+
+    var totalDonated =
+        donations
+            .Where(d => d.Status != "Cancelled")
+            .Sum(d => d.Amount);
 }
 
 <section class="profile-page">
 
     <div class="container">
 
-        <div class="profile-header">
-            <span class="hero-label">Account</span>
+        @if (TempData["ProfileMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["ProfileMessage"]
+            </div>
+        }
 
-            <h1>My Profile</h1>
+        @if (TempData["VolunteerMessage"] != null)
+        {
+            <div class="alert alert-info">
+                @TempData["VolunteerMessage"]
+            </div>
+        }
+
+        <div class="profile-header">
+
+            <span class="hero-label">
+                Account
+            </span>
+
+            <h1>
+                My Profile
+            </h1>
 
             <p>
-                Manage your account information, donations and
-                volunteer activity.
+                Manage your account information,
+                donations and volunteer activity.
             </p>
-        </div>
 
+        </div>
 
         <div class="row g-4">
 
-            <!-- Profile Information -->
+            <!-- USER -->
+
             <div class="col-lg-4">
 
                 <div class="profile-card profile-user-card">
 
                     <div class="profile-avatar">
-                        MM
+                        @initials
                     </div>
 
-                    <h2>Mark Moss</h2>
+                    <h2>
+                        @Model.FullName
+                    </h2>
 
                     <p class="profile-email">
-                        markmoss@gmail.com
+                        @Model.Email
                     </p>
 
                     <span class="profile-status">
                         Active Account
                     </span>
 
-                    <button class="profile-edit-btn">
-                        Edit Profile
-                    </button>
-
                 </div>
 
             </div>
 
+            <!-- PERSONAL INFORMATION -->
 
-            <!-- Account Details -->
             <div class="col-lg-8">
 
                 <div class="profile-card">
 
                     <div class="profile-card-header">
+
                         <div>
+
                             <span class="profile-section-label">
                                 Personal Information
                             </span>
 
-                            <h2>Account Details</h2>
-                        </div>
-                    </div>
+                            <h2>
+                                Account Details
+                            </h2>
 
-
-                    <div class="profile-details">
-
-                        <div class="profile-detail">
-                            <span>Name</span>
-                            <strong>Mark Moss</strong>
-                        </div>
-
-                        <div class="profile-detail">
-                            <span>Email</span>
-                            <strong>markmoss@gmail.com</strong>
-                        </div>
-
-                        <div class="profile-detail">
-                            <span>Phone</span>
-                            <strong>+27 00 000 0000</strong>
-                        </div>
-
-                        <div class="profile-detail">
-                            <span>Member Since</span>
-                            <strong>2026</strong>
                         </div>
 
                     </div>
+
+                    <form asp-controller="Account"
+                          asp-action="Profile"
+                          method="post">
+
+                        @Html.AntiForgeryToken()
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3">
+                        </div>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+
+                                <label asp-for="FullName"
+                                       class="form-label">
+                                    Full Name
+                                </label>
+
+                                <input asp-for="FullName"
+                                       class="form-control" />
+
+                                <span asp-validation-for="FullName"
+                                      class="text-danger">
+                                </span>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label asp-for="Email"
+                                       class="form-label">
+                                    Email
+                                </label>
+
+                                <input asp-for="Email"
+                                       type="email"
+                                       class="form-control" />
+
+                                <span asp-validation-for="Email"
+                                      class="text-danger">
+                                </span>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label asp-for="PhoneNumber"
+                                       class="form-label">
+                                    Phone
+                                </label>
+
+                                <input asp-for="PhoneNumber"
+                                       class="form-control" />
+
+                                <span asp-validation-for="PhoneNumber"
+                                      class="text-danger">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-donate mt-4">
+
+                            Save Changes
+
+                        </button>
+
+                    </form>
 
                 </div>
 
@@ -94,23 +188,25 @@
 
         </div>
 
+        <!-- ACTIVITY -->
 
-        <!-- Account Activity -->
-
-        <div class="profile-card activity-card">
+        <div class="profile-card activity-card mt-4">
 
             <div class="profile-card-header">
 
                 <div>
+
                     <span class="profile-section-label">
                         Your Activity
                     </span>
 
-                    <h2>Account Overview</h2>
+                    <h2>
+                        Account Overview
+                    </h2>
+
                 </div>
 
             </div>
-
 
             <div class="row g-4">
 
@@ -119,7 +215,7 @@
                     <div class="profile-stat">
 
                         <div class="profile-stat-number">
-                            3
+                            @donations.Count
                         </div>
 
                         <div class="profile-stat-label">
@@ -130,13 +226,12 @@
 
                 </div>
 
-
                 <div class="col-md-4">
 
                     <div class="profile-stat">
 
                         <div class="profile-stat-number">
-                            R2 500
+                            @totalDonated.ToString("C2")
                         </div>
 
                         <div class="profile-stat-label">
@@ -147,13 +242,12 @@
 
                 </div>
 
-
                 <div class="col-md-4">
 
                     <div class="profile-stat">
 
                         <div class="profile-stat-number">
-                            1
+                            @(Model.Volunteer == null ? "0" : "1")
                         </div>
 
                         <div class="profile-stat-label">
@@ -168,23 +262,25 @@
 
         </div>
 
+        <!-- QUICK ACTIONS -->
 
-        <!-- Profile Actions -->
-
-        <div class="profile-card">
+        <div class="profile-card mt-4">
 
             <div class="profile-card-header">
 
                 <div>
+
                     <span class="profile-section-label">
                         Account Management
                     </span>
 
-                    <h2>Quick Actions</h2>
+                    <h2>
+                        Quick Actions
+                    </h2>
+
                 </div>
 
             </div>
-
 
             <div class="profile-actions">
 
@@ -193,67 +289,122 @@
                    class="profile-action">
 
                     <div>
-                        <strong>Donation History</strong>
+
+                        <strong>
+                            Donation History
+                        </strong>
 
                         <span>
                             View your previous donations
                         </span>
+
                     </div>
 
-                    <span class="profile-arrow">→</span>
+                    <span class="profile-arrow">
+                        →
+                    </span>
 
                 </a>
-
 
                 <a asp-controller="Donation"
                    asp-action="Index"
                    class="profile-action">
 
                     <div>
-                        <strong>Make a Donation</strong>
+
+                        <strong>
+                            Make a Donation
+                        </strong>
 
                         <span>
                             Support humanitarian relief
                         </span>
+
                     </div>
 
-                    <span class="profile-arrow">→</span>
+                    <span class="profile-arrow">
+                        →
+                    </span>
 
                 </a>
 
+                @if (Model.Volunteer == null)
+                {
+                    <a asp-controller="Volunteer"
+                       asp-action="Apply"
+                       class="profile-action">
 
-                <a asp-controller="Volunteer"
-                   asp-action="Index"
-                   class="profile-action">
+                        <div>
 
-                    <div>
-                        <strong>Volunteer</strong>
+                            <strong>
+                                Volunteer
+                            </strong>
 
-                        <span>
-                            Get involved and help communities
+                            <span>
+                                Get involved and help communities
+                            </span>
+
+                        </div>
+
+                        <span class="profile-arrow">
+                            →
                         </span>
-                    </div>
 
-                    <span class="profile-arrow">→</span>
+                    </a>
+                }
+                else
+                {
+                    <div class="profile-action">
 
-                </a>
+                        <div>
 
+                            <strong>
+                                Volunteer Application
+                            </strong>
 
-                <a asp-controller="Account"
-                   asp-action="Login"
-                   class="profile-action profile-logout">
+                            <span>
+                                Status:
+                                @Model.Volunteer.Status
+                            </span>
 
-                    <div>
-                        <strong>Log Out</strong>
+                        </div>
 
-                        <span>
-                            Sign out of your account
+                        <span class="profile-status">
+                            @Model.Volunteer.Status
                         </span>
+
                     </div>
+                }
 
-                    <span class="profile-arrow">→</span>
+                <form asp-controller="Account"
+                      asp-action="Logout"
+                      method="post"
+                      class="m-0">
 
-                </a>
+                    @Html.AntiForgeryToken()
+
+                    <button type="submit"
+                            class="profile-action profile-logout w-100 text-start border-0">
+
+                        <div>
+
+                            <strong>
+                                Log Out
+                            </strong>
+
+                            <span>
+                                Sign out of your account
+                            </span>
+
+                        </div>
+
+                        <span class="profile-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
 
             </div>
 

@@ -11,6 +11,8 @@ public class Donation
     public string Status { get; set; } = "Completed";
     public bool IsAnonymous { get; set; } = true;
     public string? Description { get; set; }
+    public string? CertificateNumber { get; set; }
+    public DateTime? CertificateIssuedAtUtc { get; set; }
     public int? UserID { get; set; }
     public User? User { get; set; }
 }
