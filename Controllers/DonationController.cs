@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using GiftOfThe_Givers_web.Data;
+using GiftOfTheGivers.Helpers;
 using GiftOfTheGivers_web.Models;
 using GiftOfTheGivers_web.Models.ViewModels;
 using Microsoft.AspNetCore.Authentication;
@@ -349,7 +350,9 @@ public class DonationController : Controller
                 return false;
             }
 
-            donation.CertificateNumber = certificate.CertificateNumber;
+            donation.CertificateNumber =
+                CertificateNumberFormatter.Format(
+                    certificate.CertificateNumber);
             donation.CertificateIssuedAtUtc = certificate.IssuedAtUtc;
 
             return true;
