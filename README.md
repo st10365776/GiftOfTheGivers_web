@@ -308,9 +308,8 @@ Complete this section with the final POE team allocation before submission.
 
 | Team member | Student number | Primary contribution | Azure DevOps responsibility |
 | --- | --- | --- | --- |
-| _Name_ | _Student number_ | _Feature/module_ | _Boards, Repos, Pipelines, or Artifacts responsibility_ |
-| _Name_ | _Student number_ | _Feature/module_ | _Boards, Repos, Pipelines, or Artifacts responsibility_ |
-| _Name_ | _Student number_ | _Feature/module_ | _Boards, Repos, Pipelines, or Artifacts responsibility_ |
+| _Ethan Grunewald_ | _ST10365776_ | _Feature/module_ | _Boards, Repos, Pipelines, or Artifacts responsibility_ |
+| _Afeziwe Thandani_ | _ST10448454_ | _Feature/module_ | _Boards, Repos, Pipelines, or Artifacts responsibility_ |
 
 ## Security and configuration note
 
