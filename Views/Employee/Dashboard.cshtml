@@ -143,9 +143,7 @@
                                     <td>@d.DonationType</td>
 
                                     <td>
-                                        @d.DonationDate
-                                            .ToLocalTime()
-                                            .ToString("dd MMM yyyy")
+                                        @(d.DonationDate.ToLocalTime().ToString("dd MMM yyyy"))
                                     </td>
 
                                     <td>
