@@ -1,0 +1,1660 @@
+/* =========================================
+   GIFT OF THE GIVERS
+   CONTACT PAGE
+========================================= */
+
+:root {
+
+    --gotg-green: #00843D;
+    --gotg-dark-green: #006B32;
+    --gotg-light-green: #EAF7EF;
+    --gotg-soft-green: #F4FBF6;
+
+    --gotg-white: #FFFFFF;
+
+    --gotg-text: #17221B;
+    --gotg-gray: #66736B;
+
+    --gotg-border: #DDE7E0;
+}
+
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.contact-hero,
+.contact-info-section,
+.contact-form-section,
+.location-section,
+.contact-cta {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.contact-hero {
+
+    min-height: 78vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    background-image:
+        url('/images/gotg-contact.jpg');
+
+    background-size: cover;
+
+    background-position: center;
+
+    overflow: hidden;
+}
+
+
+.contact-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(0,80,37,0.95),
+            rgba(0,132,61,0.72),
+            rgba(0,0,0,0.20)
+        );
+}
+
+
+.contact-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+
+    padding:
+        90px 8%;
+
+    color: white;
+
+    animation:
+        heroContent 1s ease forwards;
+}
+
+
+.contact-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        10px 17px;
+
+    background:
+        rgba(255,255,255,0.14);
+
+    border:
+        1px solid rgba(255,255,255,0.25);
+
+    border-radius:
+        50px;
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        25px;
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+.contact-hero h1 {
+
+    font-size:
+        clamp(45px,6vw,75px);
+
+    line-height:
+        1.05;
+
+    font-weight:
+        800;
+
+    margin:
+        0 0 25px;
+}
+
+
+.contact-hero h1 span {
+
+    display:
+        block;
+
+    color:
+        #B8E8C9;
+}
+
+
+.contact-hero p {
+
+    max-width:
+        600px;
+
+    font-size:
+        18px;
+
+    line-height:
+        1.7;
+
+    color:
+        rgba(255,255,255,0.9);
+
+    margin-bottom:
+        30px;
+}
+
+
+.hero-contact-btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        14px 22px;
+
+    background:
+        white;
+
+    color:
+        var(--gotg-green);
+
+    border-radius:
+        10px;
+
+    text-decoration:
+        none;
+
+    font-weight:
+        700;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.hero-contact-btn:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,0.20);
+
+    color:
+        var(--gotg-green);
+}
+
+
+.contact-scroll {
+
+    position:
+        absolute;
+
+    bottom:
+        25px;
+
+    left:
+        8%;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    color:
+        rgba(255,255,255,0.8);
+
+    font-size:
+        12px;
+
+    animation:
+        scrollBounce 2s infinite;
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.section-label {
+
+    color:
+        var(--gotg-green);
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        2px;
+
+    font-weight:
+        800;
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        14px;
+}
+
+
+.section-heading {
+
+    text-align:
+        center;
+
+    max-width:
+        650px;
+
+    margin:
+        0 auto 50px;
+}
+
+
+.section-heading h2,
+.form-introduction h2,
+.location-content h2 {
+
+    font-size:
+        clamp(32px,4vw,48px);
+
+    line-height:
+        1.1;
+
+    font-weight:
+        800;
+
+    color:
+        var(--gotg-text);
+
+    margin:
+        0 0 18px;
+}
+
+
+.section-heading p,
+.location-content > p {
+
+    color:
+        var(--gotg-gray);
+
+    line-height:
+        1.7;
+
+    margin:
+        0;
+}
+
+
+/* =========================================
+   CONTACT INFO
+========================================= */
+
+.contact-info-section {
+
+    padding:
+        100px 30px;
+
+    background:
+        white;
+}
+
+
+.contact-cards {
+
+    max-width:
+        1150px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        20px;
+}
+
+
+.contact-card {
+
+    display:
+        flex;
+
+    gap:
+        18px;
+
+    padding:
+        28px;
+
+    border:
+        1px solid var(--gotg-border);
+
+    border-radius:
+        18px;
+
+    transition:
+        all 0.4s ease;
+
+    background:
+        white;
+}
+
+
+.contact-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        var(--gotg-green);
+
+    box-shadow:
+        0 20px 40px
+        rgba(0,100,50,0.10);
+}
+
+
+.contact-card-icon {
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    flex-shrink:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        var(--gotg-light-green);
+
+    color:
+        var(--gotg-green);
+
+    border-radius:
+        15px;
+
+    font-size:
+        21px;
+}
+
+
+.contact-card-label {
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        1.5px;
+
+    font-weight:
+        800;
+
+    color:
+        var(--gotg-green);
+}
+
+
+.contact-card h3 {
+
+    margin:
+        5px 0;
+
+    color:
+        var(--gotg-text);
+}
+
+
+.contact-card p {
+
+    font-size:
+        13px;
+
+    line-height:
+        1.6;
+
+    color:
+        var(--gotg-gray);
+
+    margin:
+        0 0 10px;
+}
+
+
+.contact-card a {
+
+    color:
+        var(--gotg-green);
+
+    text-decoration:
+        none;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+}
+
+
+.contact-card a i {
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.contact-card:hover a i {
+
+    transform:
+        translate(3px,-3px);
+}
+
+
+/* =========================================
+   FORM SECTION
+========================================= */
+
+.contact-form-section {
+
+    background:
+        var(--gotg-soft-green);
+
+    padding:
+        110px 30px;
+}
+
+
+.contact-form-wrapper {
+
+    max-width:
+        1150px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap:
+        70px;
+
+    align-items:
+        center;
+}
+
+
+.form-introduction p {
+
+    color:
+        var(--gotg-gray);
+
+    line-height:
+        1.8;
+
+    max-width:
+        470px;
+}
+
+
+.form-help {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    margin-top:
+        25px;
+}
+
+
+.help-icon {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        white;
+
+    color:
+        var(--gotg-green);
+
+    border-radius:
+        12px;
+}
+
+
+.form-help div:last-child {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        3px;
+}
+
+
+.form-help strong {
+
+    font-size:
+        13px;
+
+    color:
+        var(--gotg-text);
+}
+
+
+.form-help span {
+
+    font-size:
+        12px;
+
+    color:
+        var(--gotg-gray);
+}
+
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.contact-form-card {
+
+    background:
+        white;
+
+    padding:
+        38px;
+
+    border-radius:
+        22px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,80,40,0.10);
+}
+
+
+.form-row {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        15px;
+}
+
+
+.form-group {
+
+    margin-bottom:
+        18px;
+}
+
+
+.form-group label {
+
+    display:
+        block;
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    color:
+        var(--gotg-text);
+
+    margin-bottom:
+        7px;
+}
+
+
+.contact-input {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+}
+
+
+.contact-input i {
+
+    position:
+        absolute;
+
+    left:
+        15px;
+
+    color:
+        var(--gotg-green);
+
+    z-index:
+        2;
+}
+
+
+.contact-input input,
+.contact-input select {
+
+    width:
+        100%;
+
+    height:
+        49px;
+
+    border:
+        1px solid var(--gotg-border);
+
+    border-radius:
+        11px;
+
+    background:
+        #FAFCFB;
+
+    outline:
+        none;
+
+    padding:
+        0 15px 0 42px;
+
+    color:
+        var(--gotg-text);
+
+    font-size:
+        14px;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.contact-input input:focus,
+.contact-input select:focus,
+.textarea-wrapper textarea:focus {
+
+    border-color:
+        var(--gotg-green);
+
+    background:
+        white;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(0,132,61,0.10);
+}
+
+
+.textarea-wrapper {
+
+    position:
+        relative;
+}
+
+
+.textarea-wrapper i {
+
+    position:
+        absolute;
+
+    top:
+        16px;
+
+    left:
+        15px;
+
+    color:
+        var(--gotg-green);
+}
+
+
+.textarea-wrapper textarea {
+
+    width:
+        100%;
+
+    border:
+        1px solid var(--gotg-border);
+
+    border-radius:
+        11px;
+
+    resize:
+        vertical;
+
+    padding:
+        14px 15px 14px 42px;
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    background:
+        #FAFCFB;
+
+    outline:
+        none;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+/* =========================================
+   CONSENT
+========================================= */
+
+.contact-consent {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        8px;
+
+    font-size:
+        12px;
+
+    color:
+        var(--gotg-gray);
+
+    line-height:
+        1.5;
+
+    margin:
+        5px 0 20px;
+
+    cursor:
+        pointer;
+}
+
+
+.contact-consent input {
+
+    margin-top:
+        3px;
+
+    accent-color:
+        var(--gotg-green);
+}
+
+
+/* =========================================
+   SEND BUTTON
+========================================= */
+
+.send-message-btn {
+
+    width:
+        100%;
+
+    height:
+        52px;
+
+    border:
+        none;
+
+    border-radius:
+        11px;
+
+    background:
+        var(--gotg-green);
+
+    color:
+        white;
+
+    font-weight:
+        700;
+
+    font-size:
+        15px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    cursor:
+        pointer;
+
+    transition:
+        all 0.3s ease;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,132,61,0.20);
+}
+
+
+.send-message-btn:hover {
+
+    background:
+        var(--gotg-dark-green);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,132,61,0.30);
+}
+
+
+.send-message-btn.success {
+
+    background:
+        var(--gotg-dark-green);
+}
+
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.location-section {
+
+    max-width:
+        1200px;
+
+    margin:
+        auto;
+
+    padding:
+        110px 30px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        70px;
+
+    align-items:
+        center;
+}
+
+
+.location-details {
+
+    margin-top:
+        30px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        20px;
+}
+
+
+.location-detail {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+}
+
+
+.location-detail > i {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        12px;
+
+    background:
+        var(--gotg-light-green);
+
+    color:
+        var(--gotg-green);
+}
+
+
+.location-detail div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        3px;
+}
+
+
+.location-detail strong {
+
+    color:
+        var(--gotg-text);
+
+    font-size:
+        13px;
+}
+
+
+.location-detail span {
+
+    color:
+        var(--gotg-gray);
+
+    font-size:
+        12px;
+}
+
+
+/* =========================================
+   MAP
+========================================= */
+
+.map-placeholder {
+
+    min-height:
+        400px;
+
+    border-radius:
+        25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #DCEFE3,
+            #B9DDC6
+        );
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+}
+
+
+.map-placeholder::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        400px;
+
+    height:
+        400px;
+
+    border:
+        1px dashed
+        rgba(0,132,61,0.25);
+
+    border-radius:
+        50%;
+
+    animation:
+        mapPulse 4s infinite;
+}
+
+
+.map-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    text-align:
+        center;
+
+    background:
+        white;
+
+    padding:
+        28px 35px;
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,80,40,0.15);
+}
+
+
+.map-pin {
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    margin:
+        0 auto 15px;
+
+    border-radius:
+        50%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        var(--gotg-light-green);
+
+    color:
+        var(--gotg-green);
+
+    font-size:
+        23px;
+
+    animation:
+        pinBounce 2s infinite;
+}
+
+
+.map-content h3 {
+
+    margin:
+        0 0 5px;
+
+    color:
+        var(--gotg-text);
+}
+
+
+.map-content p {
+
+    margin:
+        0 0 18px;
+
+    color:
+        var(--gotg-gray);
+
+    font-size:
+        13px;
+}
+
+
+.map-btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        10px 15px;
+
+    background:
+        var(--gotg-green);
+
+    color:
+        white;
+
+    border-radius:
+        8px;
+
+    text-decoration:
+        none;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.contact-cta {
+
+    padding:
+        100px 30px;
+
+    text-align:
+        center;
+
+    background:
+        var(--gotg-soft-green);
+}
+
+
+.contact-cta-icon {
+
+    width:
+        65px;
+
+    height:
+        65px;
+
+    margin:
+        0 auto 22px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        20px;
+
+    background:
+        var(--gotg-green);
+
+    color:
+        white;
+
+    font-size:
+        27px;
+
+    animation:
+        floating 3s ease-in-out infinite;
+}
+
+
+.contact-cta h2 {
+
+    font-size:
+        clamp(35px,5vw,55px);
+
+    line-height:
+        1.1;
+
+    color:
+        var(--gotg-text);
+
+    margin:
+        0 0 18px;
+}
+
+
+.contact-cta p {
+
+    max-width:
+        600px;
+
+    margin:
+        0 auto 30px;
+
+    color:
+        var(--gotg-gray);
+
+    line-height:
+        1.8;
+}
+
+
+.contact-cta-buttons {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    flex-wrap:
+        wrap;
+}
+
+
+.cta-primary,
+.cta-secondary {
+
+    padding:
+        14px 22px;
+
+    border-radius:
+        10px;
+
+    text-decoration:
+        none;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    font-weight:
+        700;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.cta-primary {
+
+    background:
+        var(--gotg-green);
+
+    color:
+        white;
+}
+
+
+.cta-primary:hover {
+
+    background:
+        var(--gotg-dark-green);
+
+    color:
+        white;
+
+    transform:
+        translateY(-3px);
+}
+
+
+.cta-secondary {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--gotg-border);
+
+    color:
+        var(--gotg-text);
+}
+
+
+.cta-secondary:hover {
+
+    border-color:
+        var(--gotg-green);
+
+    color:
+        var(--gotg-green);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+.reveal.active {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes heroContent {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(40px);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes scrollBounce {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(8px);
+    }
+}
+
+
+@keyframes floating {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px);
+    }
+}
+
+
+@keyframes pinBounce {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-7px);
+    }
+}
+
+
+@keyframes mapPulse {
+
+    0% {
+
+        transform:
+            scale(0.8);
+
+        opacity:
+            0.5;
+    }
+
+    70% {
+
+        transform:
+            scale(1.2);
+
+        opacity:
+            0;
+    }
+
+    100% {
+
+        transform:
+            scale(1.2);
+
+        opacity:
+            0;
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+    .contact-cards {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .contact-form-wrapper {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            40px;
+    }
+
+    .location-section {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            40px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .contact-hero {
+
+        min-height:
+            75vh;
+    }
+
+    .contact-hero-content {
+
+        padding:
+            70px 25px;
+    }
+
+    .contact-hero h1 {
+
+        font-size:
+            42px;
+    }
+
+    .contact-info-section,
+    .contact-form-section,
+    .location-section,
+    .contact-cta {
+
+        padding:
+            75px 20px;
+    }
+
+    .contact-form-card {
+
+        padding:
+            25px 20px;
+    }
+
+    .form-row {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            0;
+    }
+
+    .map-placeholder {
+
+        min-height:
+            330px;
+    }
+
+}
